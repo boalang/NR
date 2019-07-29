@@ -21,8 +21,8 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 
 ### From Jupyter notebook
 * Prerequisite is Jupyter: [install](https://jupyter.org/install)
-* [Instructions on How to integrate Boa<sub>g</sub> with Jupyter](https://github.com/boalang/NR/tree/master/jupyter_notebooks)
-* [Jupyter notebook example](https://github.com/boalang/NR/blob/master/jupyter_notebooks/Boa_ipython.ipynb)
+* [Instructions on How to integrate Boa<sub>g</sub> with Jupyter](jupyter_notebooks)
+* [Jupyter notebook example](jupyter_notebooks)
 
 ### From command line
 * [Instructions on How to run Boa<sub>g</sub> scripts on a command line ](https://github.com/boalang/NR/tree/master/Command_Line)
