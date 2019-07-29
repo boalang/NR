@@ -14,7 +14,7 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 ## Non Redundant (NR) database and CD-HIT clustering dataset
 
 * Protobuffer schema and the step by step data generation is shown [here](https://github.com/boalang/NR/blob/master/supplemental/Data_Generation.md).
-* [JSON files version of NR for MongoDB]()
+* [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
 
 
 ## Run Boa<sub>g</sub>
