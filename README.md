@@ -31,15 +31,15 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 * [Instructions on How to run Boa<sub>g</sub> scripts in a Docker container ](https://github.com/boalang/NR/tree/master/Docker)
 
 ### On Hadoop
-* [Instructions on how to run Boa<sub>g</sub> on Bridges]()
+* [Instructions on how to run Boa<sub>g</sub> on Bridges](supplemental/Hadoop.md)
 
 ## Boa<sub>g</sub> Compiler source code
-* Boa<sub>g</sub> compiler is written in Java. See the [source code](https://github.com/boalang/NR/tree/master/compiler)
+* Boa<sub>g</sub> compiler is written in Java. See the [source code](compiler)
 * This is a video on step by step instructions to set up programming environment on Eclipse for Boa compiler. [link](https://www.youtube.com/watch?v=s4-xfprwJ0c)
 
 
 ## Boa<sub>g</sub>  Query Script examples:
-* [Query over NR database](https://github.com/boalang/NR/tree/master/Boa%20queries)
+* [Query over NR database](Boa%20queries)
 
 
 ## Download dataset and VirtualBox

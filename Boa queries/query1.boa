@@ -1,0 +1,9 @@
+## sum of protein length for each similarity level
+s: Sequence = input;
+counts: output sum[int] of int;
+
+# iterates over all clusters
+ foreach(i:int; def(s.cluster[i])){
+        counts[s.cluster[i].similarity] << s.cluster[i].length;
+    }
+ };
