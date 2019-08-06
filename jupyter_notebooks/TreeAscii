@@ -1,0 +1,174 @@
+
+                                                                                                                                                                                                                                                                                                          /-Ctenophora, 516519, genus, 0.0, 1
+                                                                                                                                                                                                                                                       /Arthropoda, 6656, phylumNeoptera, 33340, infraclass
+                                                                                                                                                                                                                                                      |                                                   \-Acanthocephala, 2316800, genus, 0.0, 0
+                                                                                                                                                                                                                          /Panarthropoda, 88770, no rank
+                                                                                                                                                                                                                         |                            |--Tardigrada, 42241, phylum, 0.05, 40565
+                                                                                                                                                                                                                         |                            |
+                                                                                                                                                                                                                         |                             \-Onychophora, 27563, phylum, 0.0, 408
+                                                                                                                                                                                                                         |
+                                                                                                                                                                                                                         |--Nematomorpha, 33310, phylum, 0.0, 44
+                                                                                                                                                                                               /Ecdysozoa, 1206794, no rank
+                                                                                                                                                                                              |                          |                                  /-Loricifera, 310840, phylum, 0.0, 0
+                                                                                                                                                                                              |                          |                                 |
+                                                                                                                                                                                              |                          |-Scalidophora, 1215728, superphylum-Kinorhyncha, 51516, phylum, 0.0, 41
+                                                                                                                                                                                              |                          |                                 |
+                                                                                                                                                                                              |                          |                                  \-Priapulus, 37847, genus, 0.02, 15495
+                                                                                                                                                                                              |                          |
+                                                                                                                                                                                              |                           \-Nematoda, 6231, phylum, 0.69, 604386
+                                                                                                                                                                                              |
+                                                                                                                                                                    /Protostomia, 33317, no rank                               /-Gastrotricha, 33313, phylum, 0.0, 78
+                                                                                                                                                                   |                          |                               |
+                                                                                                                                                                   |                          |                               |--Nemertea, 6217, phylum, 0.0, 518
+                                                                                                                                                                   |                          |                               |
+                                                                                                                                                                   |                          |                               |--Entoprocta, 43120, phylum, 0.0, 102
+                                                                                                                                                                   |                          |                               |
+                                                                                                                                                                   |                          |                               |--Cycliophora, 69815, phylum, 0.0, 3
+                                                                                                                                                                   |                          |                               |
+                                                                                                                                                                   |                          |                               |-Annelida, 6340, phylum-Sipuncula, 6433, subclass, 0.0, 234
+                                                                                                                                                                   |                          |                               |
+                                                                                                                                                                   |                           \Lophotrochozoa, 1206795, no rankBrachiopoda, 7568, phylum-Phoroniformea, 120557, subphylum, 0.0, 108
+                                                                                                                                                                   |                                                          |
+                                                                                                                                                                   |                                                          |--Mollusca, 6447, phylum, 0.29, 255526
+                                                                                                                                                                   |                                                          |
+                                                                                                                                                                   |                                                          |--Micrognathozoa, 195505, class, 0.0, 1
+                                                                                                                                                                   |                                                          |
+                                                                                                                                                                   |                                                          |--Rotifera, 10190, phylum, 0.0, 2085
+                                                                                                                                           /Bilateria, 33213, no rank                                                         |
+                                                                                                                                          |                        |                                                          |--Bryozoa, 10205, phylum, 0.0, 618
+                                                                                                                                          |                        |                                                          |
+                                                                                                                                          |                        |                                                           \-Acanthocephala, 10232, phylum, 0.0, 324
+                                                                                                                                          |                        |
+                                                                                                                                          |                        |--Platyhelminthes, 6157, phylum, 0.16, 139522
+                                                                                                                                          |                        |
+                                                                                                                                          |                        |                             /-Chordata, 7711, phylum, 4.38, 3852129
+                                                                                                                                          |                        |                            |
+                                                                                                                                          |                        |                            |--Echinodermata, 7586, phylum, 0.08, 72667
+                                                                                                                   /Eumetazoa, 6072, no rank                       |-Deuterostomia, 33511, no rank
+                                                                                                                  |                       |                        |                            |--Hemichordata, 10219, phylum, 0.02, 20853
+                                                                                                                  |                       |                        |                            |
+                                                                                                                  |                       |                        |                             \-Chaetognatha, 10229, phylum, 0.0, 380
+                                                                                                                  |                       |                        |
+                                                                                                                  |                       |                        |--Xenacoelomorpha, 1312402, phylum, 0.0, 464
+                                                                                                                  |                       |                        |
+                                                                                                                  |                       |                         \-Gnathostomulida, 66780, phylum, 0.0, 36
+                                                                                                                  |                       |
+                                                                                            /Metazoa, 33208, kingdom                      |--Cnidaria, 6073, phylum, 0.19, 170530
+                                                                                           |                      |                       |
+                                                                                           |                      |                        \-Ctenophora, 10197, phylum, 0.0, 669
+                                                                                           |                      |
+                                                                                           |                      |--Porifera, 6040, phylum, 0.02, 21427
+                                                                                           |                      |
+                                                                                           |                      |                           /-Orthonectida, 33209, phylum, 0.01, 8660
+                                                                                           |                      |-Mesozoa, 10213, superphylum
+                                                                                           |                      |                           \-Rhombozoa, 10214, phylum, 0.0, 83
+                                                                                           |                      |
+                                                                                           |                       \-Placozoa, 10226, phylum, 0.02, 15568
+                                                                                           |
+                                                                                           |                                               /-Basidiomycota, 5204, phylum, 2.1, 1846115
+                                                                                           |                    /Dikarya, 451864, subkingdom
+                                                                                           |                   |                           \-Ascomycota, 4890, phylum, 4.67, 4106751
+                                                                /Opisthokonta, 33154, no rank                  |
+                                                               |                           |                   |                                     /-Chytridiomycota, 4761, phylum, 0.15, 130770
+                                                               |                           |-Fungi, 4751, kingdom                                   |
+                                                               |                           |                   |                                    |                              /-Entomophthoromycotina, 1264859, subphylum, 0.03, 24657
+                                                               |                           |                   |                                    |                             |
+                                                               |                           |                   |                                    |-Zoopagomycota, 1913638, phylum-Zoopagomycotina, 451827, subphylum, 0.02, 16507
+                                                               |                           |                    \Fungi incertae sedis, 112252, no rank                            |
+                                                               |                           |                                                        |                              \-Kickxellomycotina, 451828, subphylum, 0.08, 73334
+                                                               |                           |                                                        |
+                                                               |                           |                                                        |--Microsporidia, 6029, phylum, 0.08, 67905
+                                                               |                           |                                                        |
+                                                               |                           |                                                        |                             /-Mucoromycotina, 451507, subphylum, 0.23, 198046
+                                                               |                           |                                                         \Mucoromycota, 1913637, phylum
+                                                               |                           |                                                                                      \-Glomeromycotina, 214504, subphylum, 0.23, 201418
+                                                               |                           |
+                                                               |                            \-Choanoflagellida, 28009, order, 0.02, 20661
+                                                               |
+                                                               |                             /-Chlorophyta, 3041, phylum, 0.25, 220878
+                                                               |                            |
+                                                               |-Viridiplantae, 33090, kingdom                         /-Marchantiophyta, 3195, no rank, 0.03, 28614
+                                   /Eukaryota, 2759, superkingdom                           |                         |
+                                  |                            |                            |                         |--Bryophyta, 3208, no rank, 0.04, 34421
+                                  |                            |                             \Embryophyta, 3193, no rank
+                                  |                            |                                                      |--Tracheophyta, 58023, no rank, 4.39, 3860665
+                                  |                            |                                                      |
+                                  |                            |                                                       \-Anthocerotophyta, 13809, no rank, 0.0, 370
+                                  |                            |
+                                  |                            |--Rhodophyta, 2763, no rank, 0.08, 70097
+                                  |                            |
+                                  |                            |--Haptophyceae, 2830, class, 0.05, 45495
+                                  |                            |
+                                  |                            |--Glaucocystophyceae, 38254, class, 0.0, 706
+                                  |                            |
+                                  |                            |--Euglenozoa, 33682, no rank, 0.23, 202575
+                                  |                            |
+                                  |                            |--Amoebozoa, 554915, no rank, 0.15, 129511
+                                  |                            |
+                                  |                            |--Cercozoa, 136419, no rank, 0.02, 14093
+                                  |                            |
+                                  |                            |--Ciliophora, 5878, no rank, 0.18, 158509
+                                  |                            |
+                                  |                             \-Ctenophora, 1003038, genus, 0.0, 1
+                                  |
+                                  |                                                    /Gemmatimonadetes, 142182, phylum-Gemmatimonadetes, 219685, class, 0.03, 30442
+                                  |                                                   |
+                                  |                                                   |                                            /-Chlorobi, 1090, phylum, 0.07, 62838
+                                  |                         /FCB group, 1783270, no rankBacteroidetes/Chlorobi group, 68336, no rank
+                                  |                        |                          |                                            \Bacteroidetes, 976, phylum-Bacteroidia, 200643, class, 1.39, 1219087
+                                  |                        |                          |
+                                  |                        |                           \Fibrobacteres, 65842, phylum-Fibrobacteria, 204430, class, 0.06, 50594
+                                  |                        |
+                                  |                        |--Synergistetes, 508458, phylum, 0.06, 53918
+                                  |                        |
+                                  |                        |                                     /Cyanobacteria/Melainabacteria group, 1798711, no rank-Cyanobacteria, 1117, phylum, 1.66, 1463127
+                                  |                        |                                    |
+                                  |                        |                                    |-Chloroflexi, 200795, phylum-Chloroflexia, 32061, class, 0.07, 58761
+                                  |                        |                                    |
+                                  |                        |                                    |--Tenericutes, 544448, phylum, 0.21, 181141
+                                  |                        |                                    |
+                                  |                        |-Terrabacteria group, 1783272, no rank-Firmicutes, 1239, phylum, 11.7, 10298207
+                                  |                        |                                    |
+-cellular organisms, 131567, no rank                       |                                    |-Actinobacteria, 201174, phylum-Actinobacteria, 1760, class, 14.3, 12584302
+                                  |                        |                                    |
+                                  |                        |                                    |--Armatimonadetes, 67819, phylum, 0.07, 65056
+                                  |                        |                                    |
+                                  |                        |                                     \-Deinococcus-Thermus, 1297, phylum, 0.25, 216943
+                                  |                        |
+                                  |                        |-Aquificae, 200783, phylum-Aquificae, 187857, class, 0.05, 45008
+                                  |                        |
+                                  |                        |                           /Planctomycetes, 203682, phylumPlanctomycetia, 203683, class-Planctomycetales, 112, order, 0.32, 279208
+                                  |                        |                          |
+                                  |                        |                          |-Chlamydiae, 204428, phylum-Chlamydiia, 204429, class, 0.1, 84037
+                                  |-Bacteria, 2, superkingdomPVC group, 1783257, no rank
+                                  |                        |                          |--Lentisphaerae, 256845, phylum, 0.06, 54683
+                                  |                        |                          |
+                                  |                        |                           \-Verrucomicrobia, 74201, phylum, 0.59, 523364
+                                  |                        |
+                                  |                        |-Acidobacteria, 57723, phylum-Acidobacteriia, 204432, class, 0.17, 147300
+                                  |                        |
+                                  |                        |-Nitrospirae, 40117, phylumNitrospira, 203693, classNitrospirales, 189778, orderNitrospiraceae, 189779, family-Nitrospira, 1234, genus, 0.08, 67756
+                                  |                        |
+                                  |                        |--Proteobacteria, 1224, phylum, 30.54, 26872870
+                                  |                        |
+                                  |                        |-Dictyoglomi, 68297, phylum-Dictyoglomia, 203486, class, 0.01, 5503
+                                  |                        |
+                                  |                        |-Thermotogae, 200918, phylum-Thermotogae, 188708, class, 0.11, 96206
+                                  |                        |
+                                  |                        |-Thermodesulfobacteria, 200940, phylum-Thermodesulfobacteria, 67799, class, 0.02, 19346
+                                  |                        |
+                                  |                        |-Deferribacteres, 200930, phylum-Deferribacteres, 68337, class, 0.02, 20430
+                                  |                        |
+                                  |                        |-Fusobacteria, 32066, phylum-Fusobacteriia, 203490, class, 0.14, 124732
+                                  |                        |
+                                  |                        |-Chrysiogenetes, 200938, phylum-Chrysiogenetes, 118001, class, 0.01, 5039
+                                  |                        |
+                                  |                        |-Elusimicrobia, 74152, phylum-Elusimicrobia, 641853, class, 0.0, 2959
+                                  |                        |
+                                  |                        |--Spirochaetes, 203691, phylum, 0.56, 489698
+                                  |                        |
+                                  |                         \-Caldiserica, 67814, phylum, 0.01, 8805
+                                  |
+                                  |                           /-Euryarchaeota, 28890, phylum, 1.68, 1476702
+                                   \Archaea, 2157, superkingdom
+                                                              \Crenarchaeota, 28889, phylum-Thermoprotei, 183924, class, 0.26, 226321
