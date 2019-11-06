@@ -1,7 +1,7 @@
 # Boa<sub>g</sub>: Boa for genomics
 
 Boa<sub>g</sub> is a domain-specific language and infrastructure on top of Hadoop for genomics data.
-Website: https://boalang.github.io/NR/
+Website: https://boalang.github.io/bio/
 
 
 These instructions will get you a command line, jupyter notebook, Docker container, and Hadoop version of  Boa<sub>g</sub>. You can also set up a programming environment in Eclipse.
