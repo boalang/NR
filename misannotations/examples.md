@@ -139,8 +139,3 @@ KHN16331 FAD, nodules, similar to chloroplast gene
 
 KHN16331,KHN42910,KHN24658,KHN25027 are all part of the same BioSample: SAMN02905861.
 ```
-
-
-May get asked "Why not just do a blastp all vs all for nr to do the same to identify contamination?"" There are several limitations to this method.
-* Taxonomic assignment is not always in the defline
-* Alignment length and sequence similarity is not explicitly controlled
