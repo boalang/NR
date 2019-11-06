@@ -17,22 +17,22 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 * [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
 
 ## Misannotation in the NR database
-
+* [Detected Misannotations](misannotations)
 
 ## Run Boa<sub>g</sub>
 
-### From Jupyter notebook
+#### From Jupyter notebook
 * Prerequisite is Jupyter: [install](https://jupyter.org/install)
 * [Instructions on How to integrate Boa<sub>g</sub> with Jupyter](jupyter_notebooks)
 * [Jupyter notebook example](jupyter_notebooks)
 
-### From command line
+#### From command line
 * [Instructions on How to run Boa<sub>g</sub> scripts on a command line ](https://github.com/boalang/NR/tree/master/Command_Line)
 
-### On a Docker container
+#### On a Docker container
 * [Instructions on How to run Boa<sub>g</sub> scripts in a Docker container ](https://github.com/boalang/NR/tree/master/Docker)
 
-### On Hadoop
+#### On Hadoop
 * [Instructions on how to run Boa<sub>g</sub> on Bridges](supplemental/Hadoop.md)
 
 ## Boa<sub>g</sub> Compiler source code
