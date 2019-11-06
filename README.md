@@ -11,7 +11,7 @@ These instructions will get you a command line, jupyter notebook, Docker contain
 You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 
-## Non Redundant (NR) database and CD-HIT clustering dataset
+### Non Redundant (NR) database and CD-HIT clustering dataset
 
 * Protobuffer schema and the step by step data generation is shown [here](https://github.com/boalang/NR/blob/master/supplemental/Data_Generation.md).
 * [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
