@@ -1,0 +1,42 @@
+SATIVA v0.9-57-g8a99328, released on 2017-07-15. Last version: https://github.com/amkozlov/sativa 
+By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
+
+SATIVA was called as follows:
+
+../sativa.py -s sim_full_sorted_head100.phy -t true_converted_sorted_head100.tax -x BAC -T 2
+
+*** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
+
+=> Loading taxonomy from file: true_converted_sorted_head100.tax ...
+
+==> Loading reference alignment from file: sim_full_sorted_head100.phy ...
+
+===> Validating taxonomy and alignment ...
+
+====> Building a multifurcating tree from taxonomy with 99 seqs ...
+
+=====> Building the reference alignment ...
+
+======> Saving the outgroup for later re-rooting ...
+
+=======> Resolving multifurcation: choosing the best topology from 1 independent RAxML runs ...
+
+========> Calling RAxML-EPA to obtain branch labels ...
+
+=========> Post-processing the EPA tree (re-rooting, taxonomic labeling etc.) ...
+
+==========> Saving the reference JSON file: ./true_converted_sorted_head100.refjson
+
+*** STEP 2: Searching for mislabels ***
+
+Running the leave-one-sequence-out test...
+
+Mislabeled sequences by rank:
+
+Total mislabels: 0 / 0.00 %
+
+Results were saved to: /Users/hbagheri/Downloads/tmp/tmp2Sativa/sativa/example2/true_converted_sorted_head100.mis
+Execution log was saved to: /Users/hbagheri/Downloads/tmp/tmp2Sativa/sativa/example2/true_converted_sorted_head100.log
+
+Analysis completed successfully, elapsed time: 56 seconds (21s reftree, 35s leave-one-out)
+

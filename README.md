@@ -17,7 +17,11 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 * [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
 
 ## Misannotation in the NR database
-##### [Detected Misannotations(Taxonomically misclassified sequences)](misannotations)
+#### [Detected taxonomically misclassified sequences](misannotations)
+
+#### [Detected misannotations for clusters]()
+
+#### [Experiments](experiments)
 
 
 

@@ -1,0 +1,139 @@
+SATIVA v0.9-57-g8a99328, released on 2017-07-15. Last version: https://github.com/amkozlov/sativa 
+By A.Kozlov and J.Zhang, the Exelixis Lab. Based on RAxML 8.2.3 by A.Stamatakis.
+
+SATIVA was called as follows:
+
+../sativa.py -s sim_full_sorted_head2000.phy -t true_converted_sorted_head2000.tax -x BAC -T 2
+
+*** STEP 1: Building the reference tree using provided alignment and taxonomic annotations ***
+
+=> Loading taxonomy from file: true_converted_sorted_head2000.tax ...
+
+==> Loading reference alignment from file: sim_full_sorted_head2000.phy ...
+
+===> Validating taxonomy and alignment ...
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Actinobacteria;Actinobacteria;Actinomycetales;Micromonosporaceae;Actinoplanes;Actinoplanes humidus
+Bacteria;Actinobacteria;Actinobacteria;Actinomycetales;Micromonosporaceae;Actinoplanes;Actinoplanes consettensis
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Actinobacteria;Actinobacteria;Actinomycetales;Micromonosporaceae;Actinoplanes;__TAXCLUSTER3__Actinoplanes humidus
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Gammaproteobacteria;Chromatiales;Chromatiaceae;Allochromatium;Allochromatium vinosum
+Bacteria;Proteobacteria;Gammaproteobacteria;Chromatiales;Chromatiaceae;Allochromatium;Allochromatium minutissimum
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Gammaproteobacteria;Chromatiales;Chromatiaceae;Allochromatium;__TAXCLUSTER10__Allochromatium vinosum
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter;Achromobacter anxifer
+Bacteria;Proteobacteria;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter;Achromobacter dolens
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter;__TAXCLUSTER1__Achromobacter anxifer
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas ichthiosmia
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas veronii
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;__TAXCLUSTER6__Aeromonas ichthiosmia
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas dhakensis
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas aquariorum
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;__TAXCLUSTER4__Aeromonas dhakensis
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Pyrococcus;Pyrococcus horikoshii
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Pyrococcus;Pyrococcus furiosus
+For the purpose of mislabels identification, they were merged into one taxon:
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Pyrococcus;__TAXCLUSTER8__Pyrococcus horikoshii
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhizobiales;Phyllobacteriaceae;Aminobacter;Aminobacter niigataensis
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhizobiales;Phyllobacteriaceae;Aminobacter;Aminobacter aganoensis
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhizobiales;Phyllobacteriaceae;Aminobacter;__TAXCLUSTER5__Aminobacter niigataensis
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus stratosphericus
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus aerophilus
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;__TAXCLUSTER2__Bacillus stratosphericus
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus mycoides
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus weihenstephanensis
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;__TAXCLUSTER12__Bacillus mycoides
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Acidiphilium;Acidiphilium rubrum
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Acidiphilium;Acidiphilium angustum
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Acidiphilium;__TAXCLUSTER7__Acidiphilium rubrum
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas bestiarum
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas salmonicida subsp. masoucida
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas salmonicida subsp. achromogenes
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;__TAXCLUSTER13__Aeromonas bestiarum
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Thermococcus;Thermococcus kodakarensis
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Thermococcus;Thermococcus peptonophilus
+For the purpose of mislabels identification, they were merged into one taxon:
+Archaea;Euryarchaeota;Thermococci;Thermococcales;Thermococcaceae;Thermococcus;__TAXCLUSTER11__Thermococcus kodakarensis
+
+
+WARNING: Following taxa share >60% indentical sequences und thus considered indistinguishable:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas enteropelogenes
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas punctata subsp. punctata
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas punctata subsp. caviae
+For the purpose of mislabels identification, they were merged into one taxon:
+Bacteria;Proteobacteria;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;__TAXCLUSTER9__Aeromonas enteropelogenes
+
+WARNING: 28 indistinguishable taxa have been merged into 13 clusters.
+
+====> Building a multifurcating tree from taxonomy with 2000 seqs ...
+
+=====> Building the reference alignment ...
+
+======> Saving the outgroup for later re-rooting ...
+
+=======> Resolving multifurcation: choosing the best topology from 1 independent RAxML runs ...
+
+========> Calling RAxML-EPA to obtain branch labels ...
+
+=========> Post-processing the EPA tree (re-rooting, taxonomic labeling etc.) ...
+
+==========> Saving the reference JSON file: ./true_converted_sorted_head2000.refjson
+
+*** STEP 2: Searching for mislabels ***
+
+Running the leave-one-sequence-out test...
+
+Leave-one-out test identified 4 suspicious sequences; running final EPA test to check them...
+
+Mislabeled sequences by rank:
+
+Total mislabels: 0 / 0.00 %
+
+Results were saved to: /Users/hbagheri/Downloads/tmp/tmp2Sativa/sativa/example2/true_converted_sorted_head2000.mis
+Execution log was saved to: /Users/hbagheri/Downloads/tmp/tmp2Sativa/sativa/example2/true_converted_sorted_head2000.log
+
+Analysis completed successfully, elapsed time: 3566 seconds (640s reftree, 2926s leave-one-out)
+
