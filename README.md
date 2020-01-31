@@ -19,7 +19,7 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 ## Misannotation in the NR database
 #### [Detected taxonomically misclassified sequences](misannotations)
 
-#### [Detected misannotations for clusters]()
+#### [Detected misannotations for clusters](misannotations/results/Clusters)
 
 #### [Experiments](experiments)
 
