@@ -15,8 +15,9 @@
 ### Methods on running our approach on the SATIVA dataset
 * dataset is RNA
 * commands to generate the cluster at 95% similarity
+  - we used CD-HIT clustering program
   ```
-
+    cd-hit-est -i infile.fa-rm -o infile_95 -c 0.95 -n 5 -g 1 -G 0 -aS 0.8  -d 0 -p 1 -T 28 -M 0
   ```
 
 ### Detect misannotations
