@@ -1,4 +1,4 @@
-# Boa Sample Queries
+# Boa Sample Queries on the NR database
 
 
 ## Frequencies of protein functions if tax assignments > 10
