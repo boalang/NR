@@ -32,4 +32,5 @@
 
 ### Calculate Precision and Recall on the simulated dataset
 * 50% of data are mislabeled purposefully
-* False positives (FP)
+* Calculate false positives (FP), True Positives (TP), False Negative (FN)
+* Calculate Precision and Recall 
