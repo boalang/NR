@@ -11,12 +11,11 @@ These instructions will get you a command line, jupyter notebook, Docker contain
 You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 
+## Misannotation in the NR database
 ### Non Redundant (NR) database and CD-HIT clustering dataset
-
 * Protobuffer schema and the step by step data generation is shown [here](https://github.com/boalang/NR/blob/master/supplemental/Data_Generation.md).
 * [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
 
-## Misannotation in the NR database
 #### [Detected taxonomically misclassified sequences](misannotations)
 
 #### [Detected misannotations for clusters](misannotations/results/Clusters)
@@ -29,8 +28,7 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 
 #### From Jupyter notebook
 * Prerequisite is Jupyter: [install](https://jupyter.org/install)
-* [Instructions on How to integrate Boa<sub>g</sub> with Jupyter](jupyter_notebooks)
-* [Jupyter notebook example](jupyter_notebooks)
+* [Jupyter notebook instructions and example](jupyter_notebooks)
 
 #### From command line
 * [Instructions on How to run Boa<sub>g</sub> scripts on a command line ](https://github.com/boalang/NR/tree/master/Command_Line)
