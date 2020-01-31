@@ -13,6 +13,8 @@ Website: https://boalang.github.io/bio/
 
 #### [Detected misannotations for clusters](misannotations/results/Clusters)
 
+#### [Correcting misclassified sequences](jupyter_notebooks/correcting.ipynb)
+
 #### [Experiments](experiments)
 
 
