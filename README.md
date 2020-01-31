@@ -4,13 +4,6 @@ Boa<sub>g</sub> is a domain-specific language and infrastructure on top of Hadoo
 Website: https://boalang.github.io/bio/
 
 
-These instructions will get you a command line, jupyter notebook, Docker container, and Hadoop version of  Boa<sub>g</sub>. You can also set up a programming environment in Eclipse.
-
-### Prerequisites
-
-You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-
-
 ## Misannotation in the NR database
 ### Non Redundant (NR) database and CD-HIT clustering dataset
 * Protobuffer schema and the step by step data generation is shown [here](https://github.com/boalang/NR/blob/master/supplemental/Data_Generation.md).
@@ -23,8 +16,14 @@ You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be
 #### [Experiments](experiments)
 
 
+---
 
 ## Run Boa<sub>g</sub>
+These instructions will get you a command line, jupyter notebook, Docker container, and Hadoop version of  Boa<sub>g</sub>. You can also set up a programming environment in Eclipse.
+
+### Prerequisites
+
+You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 #### From Jupyter notebook
 * Prerequisite is Jupyter: [install](https://jupyter.org/install)

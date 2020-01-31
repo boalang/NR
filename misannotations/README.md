@@ -1,17 +1,7 @@
 # Misannotation in the NR database
 
-### Detected Misannotated
-* [Root and kingdom violations](results)
-  - These are few examples of violations, full list is in the Google Drive link.
-
-* [Misannotations in clusters](results/Cluster)
-
-* [Google Drive link](https://drive.google.com/drive/u/2/folders/1lF7boVEF2hf9CSl0quW0T4IkRc54Fjd7)
-
-* [Case Study: Glycine](examples.md)
-
 ### Dataset
-* Boa<sub>g</sub> script output used to check misannotations
+* Boa<sub>g</sub> script output used to check misannotations. Following script is running on the entire database on XSEDE on a 5-node shared Hadoop cluster.
 
    ```
    s: Sequence = input;
@@ -36,3 +26,16 @@
       1EJC:550=14;716541=17
       1EJL:32630=8;8355=1;559292=1;10116=1;401671=2;10377=3;1439677=1;1945294=1
      ```
+
+* This output could also be achieved by bash script or any other programming languages such as Python, however, it takes longer time.
+
+### Detected Taxonomically misclassified sequences the full NR database
+##### [Root and kingdom violations](results)
+  - These are few examples of violations, full list is in the Google Drive link.
+  - [Google Drive link](https://drive.google.com/drive/u/2/folders/1lF7boVEF2hf9CSl0quW0T4IkRc54Fjd7)
+  - [Generate phylogeny tree in  the jupyter notebook](../jupyter_notebooks/phylogeny.ipynb)
+
+##### [Misannotations in clusters](results/Cluster)
+
+
+##### [Case Study: Glycine](examples.md)
