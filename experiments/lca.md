@@ -5,5 +5,3 @@
 ## Steps
 * in this flder part-r-00000 is the Boa output query.
 * then it is being converted to part-r-00000_converted that has protein sequences **that has more than 1 distinct taxa. with one taxa we can not create a Phylogeny tree to check the LCA.**
-
-* what is the ```part-r-00000_converted_1col_sorted_filtered```
