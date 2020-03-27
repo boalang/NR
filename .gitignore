@@ -1,1 +1,8 @@
 .DS_Store
+.idea
+.idea/NR.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/rSettings.xml
+.idea/workspace.xml
