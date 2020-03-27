@@ -20,4 +20,4 @@
 * [Correcting misclassified sequences](sensetivity.md)
 
 ## Compare with literature
-* [compare](compare.md)
+* [Related works on finding misclassified taxa](compare.md)
