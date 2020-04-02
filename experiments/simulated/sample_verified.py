@@ -6,7 +6,7 @@ import sys
 # python sample_verified.py misannotated_keys sample_RefSeq
 # output of this program is in sample_verified that doesn't have any misannotation
 
-# misannotated_ids are those protein ids (file names) that we know have misannotations
+# misannotated_ids are those protein ids (file names) that we know have misclassification
 with open(sys.argv[1]) as f:
     misannotated_ids = f.read().splitlines()
 
