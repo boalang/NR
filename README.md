@@ -24,7 +24,7 @@ Website: https://boalang.github.io/bio/
 
 ### Prerequisites
 
-You need to install Java. Boa<sub>g</sub> compiler is written in java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
+You need to install Java. Boa<sub>g</sub> compiler is written in Java. It can be downloaded [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 ### Run Boa<sub>g</sub>
 These instructions will get you a command line, jupyter notebook, Docker container, and Hadoop version of  Boa<sub>g</sub>. You can also set up a programming environment in Eclipse.

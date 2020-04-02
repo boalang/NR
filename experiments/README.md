@@ -11,7 +11,7 @@
 ## Taxonomic conflict between sequences and clusters
 * [conflicts analysis](conflicts.md)
 
-## Memory consumption and running time
+## Running time
 * [ Run time with different sequences](compare.md)
 
 

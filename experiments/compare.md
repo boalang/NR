@@ -1,19 +1,19 @@
 # Related works on finding misclassified taxa
 
+The comparison is designed on a local machine, not a cluster (described in Section 3.6).
+We run this analysis in iMac (Retina 5K, 27-inch, Late 2015) with core i7 and 32 GB RAM.
+
+
 ## Phylogeny-aware work (SATIVA)
 * https://github.com/amkozlov/sativa
 * examples works currently for RNA
 * examples work for one taxa at a time.
 
-
-## Others related works
-
-* https://metagenomics-workshop.readthedocs.io/en/latest/annotation/taxonomic_annotation.html
-
 ## Analysis
 
 ### Methods on running our approach on the SATIVA dataset
-* dataset is RNA
+* dataset is rRNA not protein
+* SATIVA designed to detect misannotation in rRNA sequences, not proteins. Therefore, we tested our approach on their dataset.
 * commands to generate the cluster at 95% similarity
   - we used CD-HIT clustering program
   ```
@@ -34,7 +34,6 @@
  6	1457nt, >UlaPhyma... at 1:1457:1:1458/+/95.61%
  ```
 
-* run time?
 * important time: Alignment time was not reported in the Phylogeny-aware paper
 
 ### Run time analysis

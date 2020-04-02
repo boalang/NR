@@ -1,6 +1,10 @@
-# Conflicts analysis between annotations in the sequences and clusters at nr95
 
-## Examples
+# Correcting annotations for the misclssified proteins
+* the dataset by Edgar 2018 (Peerj paper) is small, we can not get larger cluster to propose annotations
+ 
+## Conflicts analysis between annotations in the sequences and clusters at nr95
+
+### Examples
 
 * convert Boa output to one line for each sequence
 
@@ -49,7 +53,6 @@ output:
   - part-r-00000_converted
   - part-r-00000_converted_1col_sorted_filtered_cut1
 
-*
 * Code and prameters to run conflicts
 
 ```

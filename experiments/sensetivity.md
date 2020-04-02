@@ -1,9 +1,25 @@
 # Sensitivity analysis
-Among the detected missannotations, we have defined criteria to  propose the potentially correct one. We run sensitivity analysis based on probability of each annotation that we calculate from frequency of each annotation within a sequence and within a cluster that the sequence belongs to. We also consider the cluster size meaning that if 7 sequence out of 10 cluster provide a specific annotation for a given protein we consider this annotations to be a potentially most probable annotations for that protein with 70% confidence.
+Among the detected missannotations, we have defined criteria to  propose the potentially correct one. 
+We run sensitivity analysis based on probability of each annotation that we calculate from frequency of 
+each annotation within a sequence and within a cluster that the sequence belongs to. We also consider 
+the cluster size meaning that if 7 sequence out of 10 cluster provide a specific annotation for a given 
+protein we consider this annotations to be a potentially most probable annotations for that protein with 70% confidence.
 
-Details of algorithm is given in the figure below. For each detected missannotation, we look at the sequence and find the highest probable annotation within a certain threshold p, and if the approach doesn't find that it checks the cluster with 95% similarity that this sequence belongs to and finds the one with a certain probability, p,  and a cluster size, c.
+Details of algorithm is given in the figure below. For each detected missannotation, we look at the sequence and find
+the highest probable annotation within a certain threshold p, and if the approach doesn't find that it checks the 
+cluster with 95% similarity that this sequence belongs to and finds the one with a certain probability, p,  and a cluster size, c.
+The algorithm will not give the same suggestion for changes in parameters. For example, if we change the cluster size, 
+no. of proteins in the cluster, it may or may not find correct taxa. 
+
 
 ![sensitivity algorithm](sensetivity3.png)
+
+
+#### Weight of the databases
+* We can extend sensitivity by giving more weight to the reviewed databases
+* by giving more weight to the experimental taxonomic assignment with the
+  probability of 0.4 we could provide the most probable taxonomic assignment for
+  more than 80% of the sequences that were identified as a misclassification.
 
 #### preprocessing
 
