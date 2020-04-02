@@ -13,15 +13,15 @@ We run this analysis in iMac (Retina 5K, 27-inch, Late 2015) with core i7 and 32
 
 ### Methods on running our approach on the SATIVA dataset
 * dataset is rRNA not protein
-* SATIVA designed to detect misannotation in rRNA sequences, not proteins. Therefore, we tested our approach on their dataset.
+* SATIVA designed to detect taxonomic misclassification in rRNA sequences, not proteins. Therefore, we tested our approach on their dataset.
 * commands to generate the cluster at 95% similarity
   - we used CD-HIT clustering program
   ```
     cd-hit-est -i infile.fa-rm -o infile_95 -c 0.95 -n 5 -g 1 -G 0 -aS 0.8  -d 0 -p 1 -T 28 -M 0
   ```
 
-### Detect misannotations
-* Example: based on the consensus data the sequence with id UlaSpe11 is misannotated with ```g__Cupriavidus ```. It belongs to cluster id 4576 that most sequences suggest ```g__Burkholderia```  
+### Detect Taxonomic Misclassification
+* Example: based on the consensus data the sequence with id UlaSpe11 is misclassified with ```g__Cupriavidus ```. It belongs to cluster id 4576 that most sequences suggest ```g__Burkholderia```  
 
  ```
  >Cluster 4576

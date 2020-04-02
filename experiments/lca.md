@@ -1,4 +1,4 @@
-# Run LCA to find misannotations
+# Run LCA to find taxonomic misclassification
 
 * Folder on XSEDE: ``` /pylon5/mc5fr5p/hbagheri/09_Hadoop/seqCount2Jun132019```
 

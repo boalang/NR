@@ -23,7 +23,7 @@ no. of proteins in the cluster, it may or may not find correct taxa.
 
 #### preprocessing
 
-* get the keys that are found to be potentially misannotated
+* get the keys that are found to be potentially misclassified
 
 * crate dictionary of sequence membership to clusters
 
