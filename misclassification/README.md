@@ -1,7 +1,8 @@
-# Misannotation in the NR database
+# Taxonomic Misclassification in the NR database
 
 ### Dataset
-* Boa<sub>g</sub> script output used to check misannotations. Following script is running on the entire database on XSEDE on a 5-node shared Hadoop cluster.
+* Boa<sub>g</sub> script output used to check taxonomic misclassification. Following script is running on the entire 
+database on XSEDE on a 5-node shared Hadoop cluster.
 
    ```
    s: Sequence = input;
@@ -35,7 +36,7 @@
   - [Google Drive link](https://drive.google.com/drive/u/2/folders/1lF7boVEF2hf9CSl0quW0T4IkRc54Fjd7)
   - [Generate phylogeny tree in  the jupyter notebook](../jupyter_notebooks/phylogeny.ipynb)
 
-##### [Misannotations in clusters](results/Cluster)
+##### [Misclassification in clusters](results/Cluster)
 
 
 ##### [Case Study: Glycine](examples.md)
