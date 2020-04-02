@@ -1,14 +1,14 @@
 
 
-## Detecting and Cleaning Misannotation in the NR database
+## Detecting and correcting misclassified sequences in the large-scale public databases
 
 ### Dataset: Non Redundant (NR) and CD-HIT clustering information
 * Protobuffer schema and the step by step data generation is shown [here](https://github.com/boalang/NR/blob/master/supplemental/Data_Generation.md).
 * [JSON files version of NR for MongoDB](supplemental/MongoDB.md)
 
-#### [Detected taxonomically misclassified sequences](misannotations)
+#### [Detected taxonomically misclassified sequences](misclassification)
 
-#### [Detected misannotations for clusters](misannotations/results/Clusters)
+#### [Detected misclassification in the clusters](misclassification/results/Clusters)
 
 #### [Correcting misclassified sequences](jupyter_notebooks/correcting.ipynb)
 
