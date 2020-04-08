@@ -12,10 +12,10 @@ message Genome{
 
 message Sequence 
 {
-	required string accession=1;
-	required string header=2;
-	optional FeatureRoot featureRoot=3;
-	//optional string seq = 4;  //actual sequences ACTG letters from Fasta files. Temporarily disabled
+	required string refseq =1;
+	required string accession=2;
+	required string header=3;
+	optional FeatureRoot featureRoot=4;
 }
 
 
@@ -28,12 +28,12 @@ message AssemblerRoot{
 	optional int64 contig_N50=6;
 	optional int64 contig_count=7;
 	optional int64 total_gap_length=8;
-	optional uint64 assembly_date = 9;
 }
 
 message Assembler{
-   	required string name=1;
-	required string desc=2;
+   	required string refseq =1;
+   	required string name=2;
+	required string desc=3;
 
 }
 
@@ -44,23 +44,25 @@ message FeatureRoot{
 }
 
 message Feature {
-    required string accession=1;
-	required string seqid=2;
-	required string source=3;
-	required string ftype=4;
-	required int64 start=5;
-	required int64 end=6;
-	required string score=7;
-	required string strand=8;
-	required string phase=9;
-	repeated Attribute attribute=10;
-	optional string parent=11;
+	required string id=1;
+    required string accession=2;
+	required string seqid=3;
+	required string source=4;
+	required string ftype=5;
+	required int64 start=6;
+	required int64 end=7;
+	required string score=8;
+	required string strand=9;
+	required string phase=10;
+	repeated Attribute attribute=11;
+	optional string parent=12;
 
 }
 
 message Attribute{
-	required string tag=1;
-	required string value=2;
+  	required string id=1;
+	required string tag=2;
+	required string value=3;
 
 }
 

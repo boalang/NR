@@ -19,6 +19,9 @@ import boa.types.*;
 	static {
 		int counter = 0;
 
+		names.put("refseq", counter++);
+		members.add(new BoaString());
+
 		names.put("name", counter++);
 		members.add(new BoaString());
 

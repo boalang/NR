@@ -18,7 +18,6 @@ package boa.functions;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
@@ -560,44 +559,9 @@ public class BoaTimeIntrinsics {
 	 */
 	@FunctionSpec(name = "yearof", returnType = "int", formalParameters = { "time" })
 	public static long yearOf(final long t) {
-		
-		Calendar cal = Calendar.getInstance();
-		Date dtime = new Date(t);
-		cal.setTime(dtime);
-		//System.out.println("#2 dtime: "+  dtime.toString() + " get Year: " + cal.get(Calendar.YEAR));
-
-		return (cal.get(Calendar.YEAR));
-		
-		//return BoaTimeIntrinsics.partOf(Calendar.YEAR, t, TimeZone.getTimeZone("PST8PDT"));
+		return BoaTimeIntrinsics.partOf(Calendar.YEAR, t, TimeZone.getTimeZone("PST8PDT"));
 	}
 
-	
-	
-	
-	/**
-	 * The numeric second of the minute, from 0 to 59. An optional second
-	 * argument, a string, names a timezone.
-	 * 
-	 * @param t
-	 *            An int representing the time
-	 * 
-	 * @return An int representing the year
-	 */
-	@FunctionSpec(name = "yearof", returnType = "int", formalParameters = { "int" })
-	public static int yearOf(final int t) {
-		Calendar cal = Calendar.getInstance();
-		Date dtime = new Date(t);
-		cal.setTime(dtime);
-		System.out.println("#2 dtime: "+  dtime.toString() + " get Year: " + cal.get(Calendar.YEAR));
-
-		return (cal.get(Calendar.YEAR));
-		
-		
-	}
-	
-	
-	
-	
 	private static long truncToDay(final long t, final TimeZone tz) {
 		final Calendar calendar = Calendar.getInstance(tz);
 

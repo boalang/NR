@@ -148,7 +148,7 @@ public class Genomics extends AbstractSource {
 							currKey = feature.seqname();
 							sb.setAccession(feature.seqname());
 							sb.setHeader(fileName);
-							 
+							sb.setRefseq(refseq);
 						} else if (!currKey.equals(feature.seqname())) {
 							// sb.setFeatureRoot(frb.build());
 							gb.addSequence(sb.build());
@@ -158,14 +158,14 @@ public class Genomics extends AbstractSource {
 							currKey = feature.seqname();
 							sb.setAccession(feature.seqname());
 							sb.setHeader(fileName);
-							 
+							sb.setRefseq(refseq);
 						}
 
 						// the same sequence region
 						// it is a feature just add to the new FeatureRoot
 						Feature.Builder fb = Feature.newBuilder();
 						String[] rec = feature.toString().split("\t");
-						
+						fb.setId(feature.getAttribute("ID"));
 						if (feature.hasAttribute("Parent")) {
 							fb.setParent(feature.getAttribute("Parent"));
 						}
@@ -181,7 +181,7 @@ public class Genomics extends AbstractSource {
 						Attribute.Builder attb = null;
 						for (Map.Entry<String, String> entry : feature.getAttributes().entrySet()) {
 							attb = Attribute.newBuilder();
-							
+							attb.setId(feature.getAttribute("ID"));
 							attb.setTag(entry.getKey());
 							attb.setValue(entry.getValue());
 							fb.addAttribute(attb.build());
@@ -302,13 +302,14 @@ public class Genomics extends AbstractSource {
 						Sequence.Builder sb = Sequence.newBuilder();
 						sb.setAccession(seq);
 						sb.setHeader(fileName);
-						 
+						sb.setRefseq(taxID);
+
 						Feature.Builder fb = null;
 						for (FeatureI feature : fList) {
 							fb = Feature.newBuilder();
 							if (feature.seqname().equals(seq)) {
 								String[] rec = feature.toString().split("\t");
-								 
+								fb.setId(feature.getAttribute("ID"));
 								if (feature.hasAttribute("Parent"))
 									fb.setParent(feature.getAttribute("Parent"));
 								fb.setAccession(rec[0]);
@@ -327,7 +328,7 @@ public class Genomics extends AbstractSource {
 									// entry.getKey() + " value: "+
 									// entry.getValue());
 									ab = Attribute.newBuilder();
-									
+									ab.setId(feature.getAttribute("ID"));
 									ab.setTag(entry.getKey());
 									ab.setValue(entry.getValue());
 									fb.addAttribute(ab);

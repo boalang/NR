@@ -1,6 +1,7 @@
 //TODO: remove generatedsrc from the following line when to submit on hadoop
 package generatedsrc.boa;
 
+
 public class Tmp extends boa.runtime.BoaRunner {
 	/** {@inheritDoc} */
 	@Override
@@ -12,6 +13,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 		job.setJarByClass(TmpBoaMapper.class);
 
 		job.setMapperClass(TmpBoaMapper.class);
+		job.setCombinerClass(TmpBoaCombiner.class);
 		job.setReducerClass(TmpBoaReducer.class);
 
 		return job;
@@ -47,7 +49,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 			id = 0;
 
 		final org.apache.hadoop.fs.Path[] ins = new org.apache.hadoop.fs.Path[1];
-		ins[0] = new org.apache.hadoop.fs.Path(args[0] + "/genomes.seq");
+		ins[0] = new org.apache.hadoop.fs.Path(args[0] + "/annotations.seq");
 
 		final org.apache.hadoop.mapreduce.Job jb = job(ins, new org.apache.hadoop.fs.Path(args[1]), robust);
 
@@ -118,65 +120,49 @@ public class Tmp extends boa.runtime.BoaRunner {
 	}
 
 	static interface BoaJob {
-		void map(final boa.types.GFeature.Genome _input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Exception;
+		void map(final boa.types.Nr2.Sequence _input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Exception;
 	}
 
 	static class TmpBoaMapper extends boa.runtime.BoaMapper {
 		private static class Job0 implements BoaJob {
-			boa.types.GFeature.Genome ___g;
-			boa.types.GFeature.AssemblerRoot ___adata;
-			boa.types.GFeature.FeatureRoot ___fdata;
+			boa.types.Nr2.Sequence ___s;
+			boolean ___is_primary;
+			String ___primary_taxID;
 
-			public void map(final boa.types.GFeature.Genome _input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Exception {
-				___g = _input;
+			public void map(final boa.types.Nr2.Sequence _input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Exception {
+				___s = _input;
 
-				___adata = boa.functions.BoaGenomeIntrinsics.getAssembler(___g.getRefseq());
+				___is_primary = false;
 
-				for (long ___i = 0; ___i < ___adata.getAssemblerList().size(); ___i++)
+				___primary_taxID = "";
+
+				for (long ___i = 0; ___i < ___s.getClusterList().size(); ___i++)
 				{
-					if ((___adata.getAssemblerList().get((int)(___i)) != null))
+					if ((___s.getClusterList().get((int)(___i)) != null))
 					{
 						{
-							if (___adata.getTotalLength() > 2000000l && ___adata.getTotalLength() < 3000000l)
+							if (___s.getClusterList().get((int)(___i)).getSimilarity() == 95l)
 							{
-							}
-							{
-								for (long ___m = 0; ___m < ___g.getSequenceList().size(); ___m++)
+								for (long ___j = 0; ___j < ___s.getAnnotationList().size(); ___j++)
 								{
-									if ((___g.getSequenceList().get((int)(___m)) != null))
+									if ((___s.getAnnotationList().get((int)(___j)) != null))
 									{
 										{
-											___fdata = boa.functions.BoaGenomeIntrinsics.getFeature(___g.getRefseq(), ___g.getSequenceList().get((int)(___m)).getAccession());
-											for (long ___j = 0; ___j < ___fdata.getFeatureList().size(); ___j++)
+											if (!___s.getAnnotationList().get((int)(___j)).getTaxId().equals("") && ___s.getAnnotationList().get((int)(___j)).getKeyID().equals(___s.getSeqid()))
 											{
-												if ((___fdata.getFeatureList().get((int)(___j)) != null))
-												{
-													{
-														if (___fdata.getFeatureList().get((int)(___j)).getFtype().equals("gene"))
-														{
-															for (long ___k = 0; ___k < ___fdata.getFeatureList().get((int)(___j)).getAttributeList().size(); ___k++)
-															{
-																if ((___fdata.getFeatureList().get((int)(___j)).getAttributeList().get((int)(___k)) != null))
-																{
-																	{
-																		if (___fdata.getFeatureList().get((int)(___j)).getAttributeList().get((int)(___k)).getTag().equals("ID"))
-																		{
-																			context.write(new boa.io.EmitKey("[" + (___g.getRefseq()) + "]", "counts", 0), new boa.io.EmitValue(___fdata.getFeatureList().get((int)(___j)).getAttributeList().get((int)(___k)).getValue()));
-																		}
-																	}
-																}
-															}
-
-														}
-													}
-												}
+												___is_primary = true;
+												___primary_taxID = ___s.getAnnotationList().get((int)(___j)).getTaxId();
 											}
-
 										}
 									}
 								}
 
-							}}
+								if (___is_primary == true)
+								{
+									context.write(new boa.io.EmitKey("[" + (___primary_taxID) + "]" + "[" + (___s.getSeqid()) + "]", "counts", 0), new boa.io.EmitValue(1l));
+								}
+							}
+						}
 					}
 				}
 
@@ -189,7 +175,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 		@Override
 		protected void map(final org.apache.hadoop.io.Text key, final org.apache.hadoop.io.BytesWritable value, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws java.io.IOException {
 			try {
-				boa.types.GFeature.Genome _input = boa.types.GFeature.Genome.parseFrom(com.google.protobuf.CodedInputStream.newInstance(value.getBytes(), 0, value.getLength()));
+				boa.types.Nr2.Sequence _input = boa.types.Nr2.Sequence.parseFrom(com.google.protobuf.CodedInputStream.newInstance(value.getBytes(), 0, value.getLength()));
 				runJob("Job0", _job_0, _input, context);
 			} catch (final Throwable e) {
 				boa.io.BoaOutputCommitter.lastSeenEx = e;
@@ -197,7 +183,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 			}
 		}
 
-		private void runJob(final String name, final BoaJob job, final boa.types.GFeature.Genome input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Throwable {
+		private void runJob(final String name, final BoaJob job, final boa.types.Nr2.Sequence input, final org.apache.hadoop.mapreduce.Mapper<org.apache.hadoop.io.Text, org.apache.hadoop.io.BytesWritable, boa.io.EmitKey, boa.io.EmitValue>.Context context) throws Throwable {
 			try {
 				job.map(input, context);
 			} catch (final Throwable e) {
@@ -226,6 +212,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 		public TmpBoaCombiner() {
 			super();
 
+			this.aggregators.put("0::counts", new boa.aggregators.IntSumAggregator());
 		}
 	}
 
@@ -233,7 +220,7 @@ public class Tmp extends boa.runtime.BoaRunner {
 		public TmpBoaReducer() {
 			super();
 
-			this.aggregators.put("0::counts", new boa.aggregators.CollectionAggregator());
+			this.aggregators.put("0::counts", new boa.aggregators.IntSumAggregator());
 		}
 	}
 

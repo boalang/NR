@@ -550,7 +550,35 @@ public class BoaNrIntrinsics {
 		}
 	}
 
-	
+	/**
+	 * @hamid
+	 * @param feature type
+	 * @return true if the feature is gene for Genomics domain
+	 */
+	@FunctionSpec(name = "isgene", returnType = "bool", formalParameters = { "string" })
+	public static boolean isgene(final String ftype) {
+		try {
+			if (ftype.toLowerCase().equals("gene"))
+				return true;
+		} catch (Exception e) {
+			System.out.println("error isgene ");
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param feature type
+	 * @return true if the feature type is exon
+	 */
+	@FunctionSpec(name = "isexon", returnType = "bool", formalParameters = { "string" })
+	public static boolean isexon(final String ftype) {
+
+		if (ftype.equals("exon"))
+			return true;
+
+		return false;
+	}
 
 //	/**
 //	 *  @hamid
@@ -650,6 +678,130 @@ public class BoaNrIntrinsics {
 		return fileContent;
 	}
 	
-	
+	@FunctionSpec(name = "runBash", returnType = "string", formalParameters = { "string", "string" })
+	public static String runBash(String prog, String refseq) {
+		String bashResults = null;
+
+		if (prog.equals("larges_gene")) {
+			bashResults = max_gene(refseq);
+		}
+
+		return bashResults;
+	}
+
+	private static String max_gene(String refseq) {
+		if (sequenceMap == null) {
+			openSequenceMap();
+		}
+		try {
+			BytesWritable value = new BytesWritable();
+
+			if (sequenceMap.get(new Text(refseq), value) != null)
+//	      {
+//
+//	        System.out.println("Accession Key Data Found");
+//	        _stream = CodedInputStream.newInstance(value.getBytes(), 0, value.getLength());
+//	        _stream.setRecursionLimit(Integer.MAX_VALUE);
+//	        rootsequence = GFeature.SequenceRoot.parseFrom(_stream);
+//	        
+//
+//	        for (int i = 0; i < rootsequence.getSequenceCount(); i++)
+//	        {
+//	          if (featureMap == null) {
+//	            openFeatureMap();
+//	          }
+//	          BytesWritable valuefeature = new BytesWritable();
+//	          if (featureMap.get(new Text(refseq + "_" + rootsequence.getSequence(i).getAccession()), 
+//	            valuefeature) != null)
+//	          {
+//
+//	            CodedInputStream _streamfeature = CodedInputStream.newInstance(valuefeature.getBytes(), 0, 
+//	              valuefeature.getLength());
+//	            _streamfeature.setRecursionLimit(Integer.MAX_VALUE);
+//	            GFeature.FeatureRoot rootfeature = GFeature.FeatureRoot.parseFrom(_streamfeature);
+//	            
+//	            System.out.println("%%%% start record   " + rootfeature.getFeatureCount());
+//	            for (int k = 0; k < rootfeature.getFeatureCount(); k++) {
+//	              String gffRecord = rootfeature.getFeature(k).getAccession() + "\t" + 
+//	                rootfeature.getFeature(k).getSource() + "\t" + 
+//	                rootfeature.getFeature(k).getFtype() + "\t" + rootfeature.getFeature(k).getStart() + 
+//	                "\t" + rootfeature.getFeature(k).getEnd() + "\t" + 
+//	                rootfeature.getFeature(k).getScore() + "\t" + 
+//	                rootfeature.getFeature(k).getStrand() + "\t" + 
+//	                rootfeature.getFeature(k).getPhase() + "\t" + 
+//	                rootfeature.getFeature(k).getSource();
+//	              
+//
+//	              strGFF = strGFF + "\n" + gffRecord;
+//	            }
+//	          }
+//	        }
+//	      }
+
+//	      _stream = null;rootsequence = null; label496: try { out = new PrintWriter("/Users/hbagheri/Downloads/testRaw.gff");
+//	      } finally { PrintWriter out;
+//	        _stream = rootsequence; break label496; if (_stream != rootsequence) _stream.addSuppressed(rootsequence);
+//	      }
+//	      String cmdResults = null;
+//	      
+
+//	      try
+//	      {
+//	        ProcessBuilder pb = 
+//	        
+//	          new ProcessBuilder(new String[] { "awk", "BEGIN{max=0}{if ($5-$4>0+max) max=$5-$4} END{print $1 \"  \" $4 \"  \" $5}", "/Users/hbagheri/Downloads/testRaw.gff" });
+//	        
+//	        Process p = pb.start();
+//	        
+//	        BufferedReader br = new BufferedReader(
+//	        
+//	          new InputStreamReader(
+//	          
+//	          p.getInputStream()));
+//	        
+//	        String line;
+//	        
+//	        while ((line = br.readLine()) != null) {
+//	          String line;
+//	          System.out.println(line);
+//	          cmdResults = cmdResults + line;
+//	        }
+//	        
+//	        return cmdResults;
+//	      }
+//	      catch (Exception ex)
+//	      {
+//	        System.out.println(ex);
+//	      }
+//	      
+
+				System.err.println("#runBash  error with gene: " + refseq);
+		} catch (InvalidProtocolBufferException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} catch (Error e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	public static String execCmd(String cmd) throws IOException {
+		Process proc = Runtime.getRuntime().exec(cmd);
+		InputStream is = proc.getInputStream();
+		Scanner s = new Scanner(is).useDelimiter("\\A");
+		String val = "";
+		if (s.hasNext()) {
+			val = s.next();
+		} else {
+			val = "";
+		}
+		if (is !=null)
+			is.close();
+		return val;
+	}
 
 }

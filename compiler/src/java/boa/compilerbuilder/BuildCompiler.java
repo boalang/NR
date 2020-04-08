@@ -200,10 +200,7 @@ public class BuildCompiler {
 		//BuildCompiler builder = new BuildCompiler("/Users/hbagheri/Documents/MyGithub/Boa4Genomics/src/proto/genomics/GFeature.proto");
 		
 		//compiler for Non-redundant database
-		//BuildCompiler builder = new BuildCompiler("/home/Boa4Genomics/src/proto/genomics/nr2.proto");
-
-		//compiler for Non-redundant database
-		BuildCompiler builder = new BuildCompiler("/home/Boa4Genomics/src/proto/genomics/GFeature.proto");
+		BuildCompiler builder = new BuildCompiler("./src/proto/genomics/nr2.proto");
 
 		
 		try {

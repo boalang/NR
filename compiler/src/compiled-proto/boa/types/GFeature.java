@@ -1232,47 +1232,62 @@ public final class GFeature {
   public interface SequenceOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string accession = 1;
+    // required string refseq = 1;
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string refseq = 1;</code>
+     */
+    boolean hasRefseq();
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    java.lang.String getRefseq();
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRefseqBytes();
+
+    // required string accession = 2;
+    /**
+     * <code>required string accession = 2;</code>
      */
     boolean hasAccession();
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     java.lang.String getAccession();
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     com.google.protobuf.ByteString
         getAccessionBytes();
 
-    // required string header = 2;
+    // required string header = 3;
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     boolean hasHeader();
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     java.lang.String getHeader();
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     com.google.protobuf.ByteString
         getHeaderBytes();
 
-    // optional .boa.types.FeatureRoot featureRoot = 3;
+    // optional .boa.types.FeatureRoot featureRoot = 4;
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     boolean hasFeatureRoot();
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     boa.types.GFeature.FeatureRoot getFeatureRoot();
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     boa.types.GFeature.FeatureRootOrBuilder getFeatureRootOrBuilder();
   }
@@ -1329,17 +1344,22 @@ public final class GFeature {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              accession_ = input.readBytes();
+              refseq_ = input.readBytes();
               break;
             }
             case 18: {
               bitField0_ |= 0x00000002;
-              header_ = input.readBytes();
+              accession_ = input.readBytes();
               break;
             }
             case 26: {
+              bitField0_ |= 0x00000004;
+              header_ = input.readBytes();
+              break;
+            }
+            case 34: {
               boa.types.GFeature.FeatureRoot.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = featureRoot_.toBuilder();
               }
               featureRoot_ = input.readMessage(boa.types.GFeature.FeatureRoot.PARSER, extensionRegistry);
@@ -1347,7 +1367,7 @@ public final class GFeature {
                 subBuilder.mergeFrom(featureRoot_);
                 featureRoot_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             }
           }
@@ -1390,17 +1410,60 @@ public final class GFeature {
     }
 
     private int bitField0_;
-    // required string accession = 1;
-    public static final int ACCESSION_FIELD_NUMBER = 1;
-    private java.lang.Object accession_;
+    // required string refseq = 1;
+    public static final int REFSEQ_FIELD_NUMBER = 1;
+    private java.lang.Object refseq_;
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string refseq = 1;</code>
      */
-    public boolean hasAccession() {
+    public boolean hasRefseq() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string refseq = 1;</code>
+     */
+    public java.lang.String getRefseq() {
+      java.lang.Object ref = refseq_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          refseq_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRefseqBytes() {
+      java.lang.Object ref = refseq_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refseq_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string accession = 2;
+    public static final int ACCESSION_FIELD_NUMBER = 2;
+    private java.lang.Object accession_;
+    /**
+     * <code>required string accession = 2;</code>
+     */
+    public boolean hasAccession() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string accession = 2;</code>
      */
     public java.lang.String getAccession() {
       java.lang.Object ref = accession_;
@@ -1417,7 +1480,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAccessionBytes() {
@@ -1433,17 +1496,17 @@ public final class GFeature {
       }
     }
 
-    // required string header = 2;
-    public static final int HEADER_FIELD_NUMBER = 2;
+    // required string header = 3;
+    public static final int HEADER_FIELD_NUMBER = 3;
     private java.lang.Object header_;
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     public boolean hasHeader() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     public java.lang.String getHeader() {
       java.lang.Object ref = header_;
@@ -1460,7 +1523,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string header = 2;</code>
+     * <code>required string header = 3;</code>
      */
     public com.google.protobuf.ByteString
         getHeaderBytes() {
@@ -1476,29 +1539,30 @@ public final class GFeature {
       }
     }
 
-    // optional .boa.types.FeatureRoot featureRoot = 3;
-    public static final int FEATUREROOT_FIELD_NUMBER = 3;
+    // optional .boa.types.FeatureRoot featureRoot = 4;
+    public static final int FEATUREROOT_FIELD_NUMBER = 4;
     private boa.types.GFeature.FeatureRoot featureRoot_;
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     public boolean hasFeatureRoot() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     public boa.types.GFeature.FeatureRoot getFeatureRoot() {
       return featureRoot_;
     }
     /**
-     * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+     * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
      */
     public boa.types.GFeature.FeatureRootOrBuilder getFeatureRootOrBuilder() {
       return featureRoot_;
     }
 
     private void initFields() {
+      refseq_ = "";
       accession_ = "";
       header_ = "";
       featureRoot_ = boa.types.GFeature.FeatureRoot.getDefaultInstance();
@@ -1508,6 +1572,10 @@ public final class GFeature {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
+      if (!hasRefseq()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasAccession()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1530,13 +1598,16 @@ public final class GFeature {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getAccessionBytes());
+        output.writeBytes(1, getRefseqBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getHeaderBytes());
+        output.writeBytes(2, getAccessionBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, featureRoot_);
+        output.writeBytes(3, getHeaderBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, featureRoot_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1549,15 +1620,19 @@ public final class GFeature {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getAccessionBytes());
+          .computeBytesSize(1, getRefseqBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getHeaderBytes());
+          .computeBytesSize(2, getAccessionBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, featureRoot_);
+          .computeBytesSize(3, getHeaderBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, featureRoot_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1676,16 +1751,18 @@ public final class GFeature {
 
       public Builder clear() {
         super.clear();
-        accession_ = "";
+        refseq_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        header_ = "";
+        accession_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        header_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (featureRootBuilder_ == null) {
           featureRoot_ = boa.types.GFeature.FeatureRoot.getDefaultInstance();
         } else {
           featureRootBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1717,13 +1794,17 @@ public final class GFeature {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.accession_ = accession_;
+        result.refseq_ = refseq_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.header_ = header_;
+        result.accession_ = accession_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
+        }
+        result.header_ = header_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
         }
         if (featureRootBuilder_ == null) {
           result.featureRoot_ = featureRoot_;
@@ -1746,13 +1827,18 @@ public final class GFeature {
 
       public Builder mergeFrom(boa.types.GFeature.Sequence other) {
         if (other == boa.types.GFeature.Sequence.getDefaultInstance()) return this;
-        if (other.hasAccession()) {
+        if (other.hasRefseq()) {
           bitField0_ |= 0x00000001;
+          refseq_ = other.refseq_;
+          onChanged();
+        }
+        if (other.hasAccession()) {
+          bitField0_ |= 0x00000002;
           accession_ = other.accession_;
           onChanged();
         }
         if (other.hasHeader()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           header_ = other.header_;
           onChanged();
         }
@@ -1764,6 +1850,10 @@ public final class GFeature {
       }
 
       public final boolean isInitialized() {
+        if (!hasRefseq()) {
+          
+          return false;
+        }
         if (!hasAccession()) {
           
           return false;
@@ -1800,16 +1890,90 @@ public final class GFeature {
       }
       private int bitField0_;
 
-      // required string accession = 1;
-      private java.lang.Object accession_ = "";
+      // required string refseq = 1;
+      private java.lang.Object refseq_ = "";
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string refseq = 1;</code>
        */
-      public boolean hasAccession() {
+      public boolean hasRefseq() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string refseq = 1;</code>
+       */
+      public java.lang.String getRefseq() {
+        java.lang.Object ref = refseq_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          refseq_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRefseqBytes() {
+        java.lang.Object ref = refseq_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refseq_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder setRefseq(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        refseq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder clearRefseq() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        refseq_ = getDefaultInstance().getRefseq();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder setRefseqBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        refseq_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string accession = 2;
+      private java.lang.Object accession_ = "";
+      /**
+       * <code>required string accession = 2;</code>
+       */
+      public boolean hasAccession() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string accession = 2;</code>
        */
       public java.lang.String getAccession() {
         java.lang.Object ref = accession_;
@@ -1823,7 +1987,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAccessionBytes() {
@@ -1839,51 +2003,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder setAccession(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         accession_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder clearAccession() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         accession_ = getDefaultInstance().getAccession();
         onChanged();
         return this;
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder setAccessionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         accession_ = value;
         onChanged();
         return this;
       }
 
-      // required string header = 2;
+      // required string header = 3;
       private java.lang.Object header_ = "";
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public boolean hasHeader() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public java.lang.String getHeader() {
         java.lang.Object ref = header_;
@@ -1897,7 +2061,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public com.google.protobuf.ByteString
           getHeaderBytes() {
@@ -1913,53 +2077,53 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public Builder setHeader(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         header_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public Builder clearHeader() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         header_ = getDefaultInstance().getHeader();
         onChanged();
         return this;
       }
       /**
-       * <code>required string header = 2;</code>
+       * <code>required string header = 3;</code>
        */
       public Builder setHeaderBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         header_ = value;
         onChanged();
         return this;
       }
 
-      // optional .boa.types.FeatureRoot featureRoot = 3;
+      // optional .boa.types.FeatureRoot featureRoot = 4;
       private boa.types.GFeature.FeatureRoot featureRoot_ = boa.types.GFeature.FeatureRoot.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           boa.types.GFeature.FeatureRoot, boa.types.GFeature.FeatureRoot.Builder, boa.types.GFeature.FeatureRootOrBuilder> featureRootBuilder_;
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public boolean hasFeatureRoot() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public boa.types.GFeature.FeatureRoot getFeatureRoot() {
         if (featureRootBuilder_ == null) {
@@ -1969,7 +2133,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public Builder setFeatureRoot(boa.types.GFeature.FeatureRoot value) {
         if (featureRootBuilder_ == null) {
@@ -1981,11 +2145,11 @@ public final class GFeature {
         } else {
           featureRootBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public Builder setFeatureRoot(
           boa.types.GFeature.FeatureRoot.Builder builderForValue) {
@@ -1995,15 +2159,15 @@ public final class GFeature {
         } else {
           featureRootBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public Builder mergeFeatureRoot(boa.types.GFeature.FeatureRoot value) {
         if (featureRootBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
               featureRoot_ != boa.types.GFeature.FeatureRoot.getDefaultInstance()) {
             featureRoot_ =
               boa.types.GFeature.FeatureRoot.newBuilder(featureRoot_).mergeFrom(value).buildPartial();
@@ -2014,11 +2178,11 @@ public final class GFeature {
         } else {
           featureRootBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public Builder clearFeatureRoot() {
         if (featureRootBuilder_ == null) {
@@ -2027,19 +2191,19 @@ public final class GFeature {
         } else {
           featureRootBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public boa.types.GFeature.FeatureRoot.Builder getFeatureRootBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getFeatureRootFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       public boa.types.GFeature.FeatureRootOrBuilder getFeatureRootOrBuilder() {
         if (featureRootBuilder_ != null) {
@@ -2049,7 +2213,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>optional .boa.types.FeatureRoot featureRoot = 3;</code>
+       * <code>optional .boa.types.FeatureRoot featureRoot = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           boa.types.GFeature.FeatureRoot, boa.types.GFeature.FeatureRoot.Builder, boa.types.GFeature.FeatureRootOrBuilder> 
@@ -2178,16 +2342,6 @@ public final class GFeature {
      * <code>optional int64 total_gap_length = 8;</code>
      */
     long getTotalGapLength();
-
-    // optional uint64 assembly_date = 9;
-    /**
-     * <code>optional uint64 assembly_date = 9;</code>
-     */
-    boolean hasAssemblyDate();
-    /**
-     * <code>optional uint64 assembly_date = 9;</code>
-     */
-    long getAssemblyDate();
   }
   /**
    * Protobuf type {@code boa.types.AssemblerRoot}
@@ -2281,11 +2435,6 @@ public final class GFeature {
             case 64: {
               bitField0_ |= 0x00000040;
               totalGapLength_ = input.readInt64();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000080;
-              assemblyDate_ = input.readUInt64();
               break;
             }
           }
@@ -2506,22 +2655,6 @@ public final class GFeature {
       return totalGapLength_;
     }
 
-    // optional uint64 assembly_date = 9;
-    public static final int ASSEMBLY_DATE_FIELD_NUMBER = 9;
-    private long assemblyDate_;
-    /**
-     * <code>optional uint64 assembly_date = 9;</code>
-     */
-    public boolean hasAssemblyDate() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional uint64 assembly_date = 9;</code>
-     */
-    public long getAssemblyDate() {
-      return assemblyDate_;
-    }
-
     private void initFields() {
       refseq_ = "";
       assembler_ = java.util.Collections.emptyList();
@@ -2531,7 +2664,6 @@ public final class GFeature {
       contigN50_ = 0L;
       contigCount_ = 0L;
       totalGapLength_ = 0L;
-      assemblyDate_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2575,9 +2707,6 @@ public final class GFeature {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt64(8, totalGapLength_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeUInt64(9, assemblyDate_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2618,10 +2747,6 @@ public final class GFeature {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, totalGapLength_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, assemblyDate_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2760,8 +2885,6 @@ public final class GFeature {
         bitField0_ = (bitField0_ & ~0x00000040);
         totalGapLength_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
-        assemblyDate_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -2827,10 +2950,6 @@ public final class GFeature {
           to_bitField0_ |= 0x00000040;
         }
         result.totalGapLength_ = totalGapLength_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.assemblyDate_ = assemblyDate_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2895,9 +3014,6 @@ public final class GFeature {
         }
         if (other.hasTotalGapLength()) {
           setTotalGapLength(other.getTotalGapLength());
-        }
-        if (other.hasAssemblyDate()) {
-          setAssemblyDate(other.getAssemblyDate());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -3444,39 +3560,6 @@ public final class GFeature {
         return this;
       }
 
-      // optional uint64 assembly_date = 9;
-      private long assemblyDate_ ;
-      /**
-       * <code>optional uint64 assembly_date = 9;</code>
-       */
-      public boolean hasAssemblyDate() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional uint64 assembly_date = 9;</code>
-       */
-      public long getAssemblyDate() {
-        return assemblyDate_;
-      }
-      /**
-       * <code>optional uint64 assembly_date = 9;</code>
-       */
-      public Builder setAssemblyDate(long value) {
-        bitField0_ |= 0x00000100;
-        assemblyDate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 assembly_date = 9;</code>
-       */
-      public Builder clearAssemblyDate() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        assemblyDate_ = 0L;
-        onChanged();
-        return this;
-      }
-
       // @@protoc_insertion_point(builder_scope:boa.types.AssemblerRoot)
     }
 
@@ -3491,32 +3574,47 @@ public final class GFeature {
   public interface AssemblerOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string name = 1;
+    // required string refseq = 1;
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string refseq = 1;</code>
+     */
+    boolean hasRefseq();
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    java.lang.String getRefseq();
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRefseqBytes();
+
+    // required string name = 2;
+    /**
+     * <code>required string name = 2;</code>
      */
     boolean hasName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string name = 2;</code>
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string name = 2;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
-    // required string desc = 2;
+    // required string desc = 3;
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     boolean hasDesc();
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     java.lang.String getDesc();
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     com.google.protobuf.ByteString
         getDescBytes();
@@ -3574,11 +3672,16 @@ public final class GFeature {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              name_ = input.readBytes();
+              refseq_ = input.readBytes();
               break;
             }
             case 18: {
               bitField0_ |= 0x00000002;
+              name_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
               desc_ = input.readBytes();
               break;
             }
@@ -3622,17 +3725,60 @@ public final class GFeature {
     }
 
     private int bitField0_;
-    // required string name = 1;
-    public static final int NAME_FIELD_NUMBER = 1;
-    private java.lang.Object name_;
+    // required string refseq = 1;
+    public static final int REFSEQ_FIELD_NUMBER = 1;
+    private java.lang.Object refseq_;
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string refseq = 1;</code>
      */
-    public boolean hasName() {
+    public boolean hasRefseq() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string refseq = 1;</code>
+     */
+    public java.lang.String getRefseq() {
+      java.lang.Object ref = refseq_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          refseq_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string refseq = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRefseqBytes() {
+      java.lang.Object ref = refseq_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refseq_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string name = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private java.lang.Object name_;
+    /**
+     * <code>required string name = 2;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string name = 2;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -3649,7 +3795,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>required string name = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -3665,17 +3811,17 @@ public final class GFeature {
       }
     }
 
-    // required string desc = 2;
-    public static final int DESC_FIELD_NUMBER = 2;
+    // required string desc = 3;
+    public static final int DESC_FIELD_NUMBER = 3;
     private java.lang.Object desc_;
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     public boolean hasDesc() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     public java.lang.String getDesc() {
       java.lang.Object ref = desc_;
@@ -3692,7 +3838,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string desc = 2;</code>
+     * <code>required string desc = 3;</code>
      */
     public com.google.protobuf.ByteString
         getDescBytes() {
@@ -3709,6 +3855,7 @@ public final class GFeature {
     }
 
     private void initFields() {
+      refseq_ = "";
       name_ = "";
       desc_ = "";
     }
@@ -3717,6 +3864,10 @@ public final class GFeature {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
+      if (!hasRefseq()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasName()) {
         memoizedIsInitialized = 0;
         return false;
@@ -3733,10 +3884,13 @@ public final class GFeature {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getNameBytes());
+        output.writeBytes(1, getRefseqBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getDescBytes());
+        output.writeBytes(2, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getDescBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -3749,11 +3903,15 @@ public final class GFeature {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getNameBytes());
+          .computeBytesSize(1, getRefseqBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getDescBytes());
+          .computeBytesSize(2, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getDescBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3871,10 +4029,12 @@ public final class GFeature {
 
       public Builder clear() {
         super.clear();
-        name_ = "";
+        refseq_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        desc_ = "";
+        name_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        desc_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -3906,9 +4066,13 @@ public final class GFeature {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.name_ = name_;
+        result.refseq_ = refseq_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.desc_ = desc_;
         result.bitField0_ = to_bitField0_;
@@ -3927,13 +4091,18 @@ public final class GFeature {
 
       public Builder mergeFrom(boa.types.GFeature.Assembler other) {
         if (other == boa.types.GFeature.Assembler.getDefaultInstance()) return this;
-        if (other.hasName()) {
+        if (other.hasRefseq()) {
           bitField0_ |= 0x00000001;
+          refseq_ = other.refseq_;
+          onChanged();
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000002;
           name_ = other.name_;
           onChanged();
         }
         if (other.hasDesc()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           desc_ = other.desc_;
           onChanged();
         }
@@ -3942,6 +4111,10 @@ public final class GFeature {
       }
 
       public final boolean isInitialized() {
+        if (!hasRefseq()) {
+          
+          return false;
+        }
         if (!hasName()) {
           
           return false;
@@ -3972,16 +4145,90 @@ public final class GFeature {
       }
       private int bitField0_;
 
-      // required string name = 1;
-      private java.lang.Object name_ = "";
+      // required string refseq = 1;
+      private java.lang.Object refseq_ = "";
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string refseq = 1;</code>
        */
-      public boolean hasName() {
+      public boolean hasRefseq() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string refseq = 1;</code>
+       */
+      public java.lang.String getRefseq() {
+        java.lang.Object ref = refseq_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          refseq_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRefseqBytes() {
+        java.lang.Object ref = refseq_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refseq_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder setRefseq(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        refseq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder clearRefseq() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        refseq_ = getDefaultInstance().getRefseq();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string refseq = 1;</code>
+       */
+      public Builder setRefseqBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        refseq_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string name = 2;
+      private java.lang.Object name_ = "";
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string name = 2;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3995,7 +4242,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -4011,51 +4258,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         name_ = value;
         onChanged();
         return this;
       }
 
-      // required string desc = 2;
+      // required string desc = 3;
       private java.lang.Object desc_ = "";
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public boolean hasDesc() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public java.lang.String getDesc() {
         java.lang.Object ref = desc_;
@@ -4069,7 +4316,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public com.google.protobuf.ByteString
           getDescBytes() {
@@ -4085,36 +4332,36 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public Builder setDesc(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         desc_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public Builder clearDesc() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
       }
       /**
-       * <code>required string desc = 2;</code>
+       * <code>required string desc = 3;</code>
        */
       public Builder setDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         desc_ = value;
         onChanged();
         return this;
@@ -4979,167 +5226,182 @@ public final class GFeature {
   public interface FeatureOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string accession = 1;
+    // required string id = 1;
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>required string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    // required string accession = 2;
+    /**
+     * <code>required string accession = 2;</code>
      */
     boolean hasAccession();
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     java.lang.String getAccession();
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     com.google.protobuf.ByteString
         getAccessionBytes();
 
-    // required string seqid = 2;
+    // required string seqid = 3;
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     boolean hasSeqid();
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     java.lang.String getSeqid();
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     com.google.protobuf.ByteString
         getSeqidBytes();
 
-    // required string source = 3;
+    // required string source = 4;
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     boolean hasSource();
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     java.lang.String getSource();
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     com.google.protobuf.ByteString
         getSourceBytes();
 
-    // required string ftype = 4;
+    // required string ftype = 5;
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     boolean hasFtype();
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     java.lang.String getFtype();
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     com.google.protobuf.ByteString
         getFtypeBytes();
 
-    // required int64 start = 5;
+    // required int64 start = 6;
     /**
-     * <code>required int64 start = 5;</code>
+     * <code>required int64 start = 6;</code>
      */
     boolean hasStart();
     /**
-     * <code>required int64 start = 5;</code>
+     * <code>required int64 start = 6;</code>
      */
     long getStart();
 
-    // required int64 end = 6;
+    // required int64 end = 7;
     /**
-     * <code>required int64 end = 6;</code>
+     * <code>required int64 end = 7;</code>
      */
     boolean hasEnd();
     /**
-     * <code>required int64 end = 6;</code>
+     * <code>required int64 end = 7;</code>
      */
     long getEnd();
 
-    // required string score = 7;
+    // required string score = 8;
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     boolean hasScore();
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     java.lang.String getScore();
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     com.google.protobuf.ByteString
         getScoreBytes();
 
-    // required string strand = 8;
+    // required string strand = 9;
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     boolean hasStrand();
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     java.lang.String getStrand();
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     com.google.protobuf.ByteString
         getStrandBytes();
 
-    // required string phase = 9;
+    // required string phase = 10;
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     boolean hasPhase();
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     java.lang.String getPhase();
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     com.google.protobuf.ByteString
         getPhaseBytes();
 
-    // repeated .boa.types.Attribute attribute = 10;
+    // repeated .boa.types.Attribute attribute = 11;
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     java.util.List<boa.types.GFeature.Attribute> 
         getAttributeList();
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     boa.types.GFeature.Attribute getAttribute(int index);
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     int getAttributeCount();
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     java.util.List<? extends boa.types.GFeature.AttributeOrBuilder> 
         getAttributeOrBuilderList();
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     boa.types.GFeature.AttributeOrBuilder getAttributeOrBuilder(
         int index);
 
-    // optional string parent = 11;
+    // optional string parent = 12;
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     boolean hasParent();
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     java.lang.String getParent();
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     com.google.protobuf.ByteString
         getParentBytes();
@@ -5197,59 +5459,64 @@ public final class GFeature {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              accession_ = input.readBytes();
+              id_ = input.readBytes();
               break;
             }
             case 18: {
               bitField0_ |= 0x00000002;
-              seqid_ = input.readBytes();
+              accession_ = input.readBytes();
               break;
             }
             case 26: {
               bitField0_ |= 0x00000004;
-              source_ = input.readBytes();
+              seqid_ = input.readBytes();
               break;
             }
             case 34: {
               bitField0_ |= 0x00000008;
-              ftype_ = input.readBytes();
+              source_ = input.readBytes();
               break;
             }
-            case 40: {
+            case 42: {
               bitField0_ |= 0x00000010;
-              start_ = input.readInt64();
+              ftype_ = input.readBytes();
               break;
             }
             case 48: {
               bitField0_ |= 0x00000020;
-              end_ = input.readInt64();
+              start_ = input.readInt64();
               break;
             }
-            case 58: {
+            case 56: {
               bitField0_ |= 0x00000040;
-              score_ = input.readBytes();
+              end_ = input.readInt64();
               break;
             }
             case 66: {
               bitField0_ |= 0x00000080;
-              strand_ = input.readBytes();
+              score_ = input.readBytes();
               break;
             }
             case 74: {
               bitField0_ |= 0x00000100;
-              phase_ = input.readBytes();
+              strand_ = input.readBytes();
               break;
             }
             case 82: {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              bitField0_ |= 0x00000200;
+              phase_ = input.readBytes();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 attribute_ = new java.util.ArrayList<boa.types.GFeature.Attribute>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               attribute_.add(input.readMessage(boa.types.GFeature.Attribute.PARSER, extensionRegistry));
               break;
             }
-            case 90: {
-              bitField0_ |= 0x00000200;
+            case 98: {
+              bitField0_ |= 0x00000400;
               parent_ = input.readBytes();
               break;
             }
@@ -5261,7 +5528,7 @@ public final class GFeature {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           attribute_ = java.util.Collections.unmodifiableList(attribute_);
         }
         this.unknownFields = unknownFields.build();
@@ -5296,17 +5563,60 @@ public final class GFeature {
     }
 
     private int bitField0_;
-    // required string accession = 1;
-    public static final int ACCESSION_FIELD_NUMBER = 1;
-    private java.lang.Object accession_;
+    // required string id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private java.lang.Object id_;
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string id = 1;</code>
      */
-    public boolean hasAccession() {
+    public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string accession = 2;
+    public static final int ACCESSION_FIELD_NUMBER = 2;
+    private java.lang.Object accession_;
+    /**
+     * <code>required string accession = 2;</code>
+     */
+    public boolean hasAccession() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string accession = 2;</code>
      */
     public java.lang.String getAccession() {
       java.lang.Object ref = accession_;
@@ -5323,7 +5633,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string accession = 1;</code>
+     * <code>required string accession = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAccessionBytes() {
@@ -5339,17 +5649,17 @@ public final class GFeature {
       }
     }
 
-    // required string seqid = 2;
-    public static final int SEQID_FIELD_NUMBER = 2;
+    // required string seqid = 3;
+    public static final int SEQID_FIELD_NUMBER = 3;
     private java.lang.Object seqid_;
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     public boolean hasSeqid() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     public java.lang.String getSeqid() {
       java.lang.Object ref = seqid_;
@@ -5366,7 +5676,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string seqid = 2;</code>
+     * <code>required string seqid = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSeqidBytes() {
@@ -5382,17 +5692,17 @@ public final class GFeature {
       }
     }
 
-    // required string source = 3;
-    public static final int SOURCE_FIELD_NUMBER = 3;
+    // required string source = 4;
+    public static final int SOURCE_FIELD_NUMBER = 4;
     private java.lang.Object source_;
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -5409,7 +5719,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string source = 3;</code>
+     * <code>required string source = 4;</code>
      */
     public com.google.protobuf.ByteString
         getSourceBytes() {
@@ -5425,17 +5735,17 @@ public final class GFeature {
       }
     }
 
-    // required string ftype = 4;
-    public static final int FTYPE_FIELD_NUMBER = 4;
+    // required string ftype = 5;
+    public static final int FTYPE_FIELD_NUMBER = 5;
     private java.lang.Object ftype_;
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     public boolean hasFtype() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     public java.lang.String getFtype() {
       java.lang.Object ref = ftype_;
@@ -5452,7 +5762,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string ftype = 4;</code>
+     * <code>required string ftype = 5;</code>
      */
     public com.google.protobuf.ByteString
         getFtypeBytes() {
@@ -5468,49 +5778,49 @@ public final class GFeature {
       }
     }
 
-    // required int64 start = 5;
-    public static final int START_FIELD_NUMBER = 5;
+    // required int64 start = 6;
+    public static final int START_FIELD_NUMBER = 6;
     private long start_;
     /**
-     * <code>required int64 start = 5;</code>
+     * <code>required int64 start = 6;</code>
      */
     public boolean hasStart() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required int64 start = 5;</code>
+     * <code>required int64 start = 6;</code>
      */
     public long getStart() {
       return start_;
     }
 
-    // required int64 end = 6;
-    public static final int END_FIELD_NUMBER = 6;
+    // required int64 end = 7;
+    public static final int END_FIELD_NUMBER = 7;
     private long end_;
     /**
-     * <code>required int64 end = 6;</code>
+     * <code>required int64 end = 7;</code>
      */
     public boolean hasEnd() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int64 end = 6;</code>
+     * <code>required int64 end = 7;</code>
      */
     public long getEnd() {
       return end_;
     }
 
-    // required string score = 7;
-    public static final int SCORE_FIELD_NUMBER = 7;
+    // required string score = 8;
+    public static final int SCORE_FIELD_NUMBER = 8;
     private java.lang.Object score_;
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     public boolean hasScore() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     public java.lang.String getScore() {
       java.lang.Object ref = score_;
@@ -5527,7 +5837,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string score = 7;</code>
+     * <code>required string score = 8;</code>
      */
     public com.google.protobuf.ByteString
         getScoreBytes() {
@@ -5543,17 +5853,17 @@ public final class GFeature {
       }
     }
 
-    // required string strand = 8;
-    public static final int STRAND_FIELD_NUMBER = 8;
+    // required string strand = 9;
+    public static final int STRAND_FIELD_NUMBER = 9;
     private java.lang.Object strand_;
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     public boolean hasStrand() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     public java.lang.String getStrand() {
       java.lang.Object ref = strand_;
@@ -5570,7 +5880,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string strand = 8;</code>
+     * <code>required string strand = 9;</code>
      */
     public com.google.protobuf.ByteString
         getStrandBytes() {
@@ -5586,17 +5896,17 @@ public final class GFeature {
       }
     }
 
-    // required string phase = 9;
-    public static final int PHASE_FIELD_NUMBER = 9;
+    // required string phase = 10;
+    public static final int PHASE_FIELD_NUMBER = 10;
     private java.lang.Object phase_;
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     public boolean hasPhase() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     public java.lang.String getPhase() {
       java.lang.Object ref = phase_;
@@ -5613,7 +5923,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string phase = 9;</code>
+     * <code>required string phase = 10;</code>
      */
     public com.google.protobuf.ByteString
         getPhaseBytes() {
@@ -5629,53 +5939,53 @@ public final class GFeature {
       }
     }
 
-    // repeated .boa.types.Attribute attribute = 10;
-    public static final int ATTRIBUTE_FIELD_NUMBER = 10;
+    // repeated .boa.types.Attribute attribute = 11;
+    public static final int ATTRIBUTE_FIELD_NUMBER = 11;
     private java.util.List<boa.types.GFeature.Attribute> attribute_;
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     public java.util.List<boa.types.GFeature.Attribute> getAttributeList() {
       return attribute_;
     }
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     public java.util.List<? extends boa.types.GFeature.AttributeOrBuilder> 
         getAttributeOrBuilderList() {
       return attribute_;
     }
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     public int getAttributeCount() {
       return attribute_.size();
     }
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     public boa.types.GFeature.Attribute getAttribute(int index) {
       return attribute_.get(index);
     }
     /**
-     * <code>repeated .boa.types.Attribute attribute = 10;</code>
+     * <code>repeated .boa.types.Attribute attribute = 11;</code>
      */
     public boa.types.GFeature.AttributeOrBuilder getAttributeOrBuilder(
         int index) {
       return attribute_.get(index);
     }
 
-    // optional string parent = 11;
-    public static final int PARENT_FIELD_NUMBER = 11;
+    // optional string parent = 12;
+    public static final int PARENT_FIELD_NUMBER = 12;
     private java.lang.Object parent_;
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     public boolean hasParent() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -5692,7 +6002,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>optional string parent = 11;</code>
+     * <code>optional string parent = 12;</code>
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -5709,6 +6019,7 @@ public final class GFeature {
     }
 
     private void initFields() {
+      id_ = "";
       accession_ = "";
       seqid_ = "";
       source_ = "";
@@ -5726,6 +6037,10 @@ public final class GFeature {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasAccession()) {
         memoizedIsInitialized = 0;
         return false;
@@ -5776,37 +6091,40 @@ public final class GFeature {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getAccessionBytes());
+        output.writeBytes(1, getIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getSeqidBytes());
+        output.writeBytes(2, getAccessionBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getSourceBytes());
+        output.writeBytes(3, getSeqidBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getFtypeBytes());
+        output.writeBytes(4, getSourceBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, start_);
+        output.writeBytes(5, getFtypeBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, end_);
+        output.writeInt64(6, start_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getScoreBytes());
+        output.writeInt64(7, end_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(8, getStrandBytes());
+        output.writeBytes(8, getScoreBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeBytes(9, getPhaseBytes());
-      }
-      for (int i = 0; i < attribute_.size(); i++) {
-        output.writeMessage(10, attribute_.get(i));
+        output.writeBytes(9, getStrandBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeBytes(11, getParentBytes());
+        output.writeBytes(10, getPhaseBytes());
+      }
+      for (int i = 0; i < attribute_.size(); i++) {
+        output.writeMessage(11, attribute_.get(i));
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBytes(12, getParentBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5819,47 +6137,51 @@ public final class GFeature {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getAccessionBytes());
+          .computeBytesSize(1, getIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getSeqidBytes());
+          .computeBytesSize(2, getAccessionBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getSourceBytes());
+          .computeBytesSize(3, getSeqidBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getFtypeBytes());
+          .computeBytesSize(4, getSourceBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, start_);
+          .computeBytesSize(5, getFtypeBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, end_);
+          .computeInt64Size(6, start_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getScoreBytes());
+          .computeInt64Size(7, end_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getStrandBytes());
+          .computeBytesSize(8, getScoreBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, getPhaseBytes());
-      }
-      for (int i = 0; i < attribute_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, attribute_.get(i));
+          .computeBytesSize(9, getStrandBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getParentBytes());
+          .computeBytesSize(10, getPhaseBytes());
+      }
+      for (int i = 0; i < attribute_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, attribute_.get(i));
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getParentBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5978,32 +6300,34 @@ public final class GFeature {
 
       public Builder clear() {
         super.clear();
-        accession_ = "";
+        id_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        seqid_ = "";
+        accession_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        source_ = "";
+        seqid_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        ftype_ = "";
+        source_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        start_ = 0L;
+        ftype_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        end_ = 0L;
+        start_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000020);
-        score_ = "";
+        end_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
-        strand_ = "";
+        score_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
-        phase_ = "";
+        strand_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
+        phase_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
         if (attributeBuilder_ == null) {
           attribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           attributeBuilder_.clear();
         }
         parent_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -6035,50 +6359,54 @@ public final class GFeature {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.accession_ = accession_;
+        result.id_ = id_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.seqid_ = seqid_;
+        result.accession_ = accession_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.source_ = source_;
+        result.seqid_ = seqid_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.ftype_ = ftype_;
+        result.source_ = source_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.start_ = start_;
+        result.ftype_ = ftype_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.end_ = end_;
+        result.start_ = start_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.score_ = score_;
+        result.end_ = end_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.strand_ = strand_;
+        result.score_ = score_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
+        result.strand_ = strand_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
         result.phase_ = phase_;
         if (attributeBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
             attribute_ = java.util.Collections.unmodifiableList(attribute_);
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.attribute_ = attribute_;
         } else {
           result.attribute_ = attributeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000200;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000400;
         }
         result.parent_ = parent_;
         result.bitField0_ = to_bitField0_;
@@ -6097,23 +6425,28 @@ public final class GFeature {
 
       public Builder mergeFrom(boa.types.GFeature.Feature other) {
         if (other == boa.types.GFeature.Feature.getDefaultInstance()) return this;
-        if (other.hasAccession()) {
+        if (other.hasId()) {
           bitField0_ |= 0x00000001;
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.hasAccession()) {
+          bitField0_ |= 0x00000002;
           accession_ = other.accession_;
           onChanged();
         }
         if (other.hasSeqid()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           seqid_ = other.seqid_;
           onChanged();
         }
         if (other.hasSource()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           source_ = other.source_;
           onChanged();
         }
         if (other.hasFtype()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           ftype_ = other.ftype_;
           onChanged();
         }
@@ -6124,17 +6457,17 @@ public final class GFeature {
           setEnd(other.getEnd());
         }
         if (other.hasScore()) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           score_ = other.score_;
           onChanged();
         }
         if (other.hasStrand()) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           strand_ = other.strand_;
           onChanged();
         }
         if (other.hasPhase()) {
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           phase_ = other.phase_;
           onChanged();
         }
@@ -6142,7 +6475,7 @@ public final class GFeature {
           if (!other.attribute_.isEmpty()) {
             if (attribute_.isEmpty()) {
               attribute_ = other.attribute_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensureAttributeIsMutable();
               attribute_.addAll(other.attribute_);
@@ -6155,7 +6488,7 @@ public final class GFeature {
               attributeBuilder_.dispose();
               attributeBuilder_ = null;
               attribute_ = other.attribute_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
               attributeBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getAttributeFieldBuilder() : null;
@@ -6165,7 +6498,7 @@ public final class GFeature {
           }
         }
         if (other.hasParent()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           parent_ = other.parent_;
           onChanged();
         }
@@ -6174,6 +6507,10 @@ public final class GFeature {
       }
 
       public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
         if (!hasAccession()) {
           
           return false;
@@ -6238,16 +6575,90 @@ public final class GFeature {
       }
       private int bitField0_;
 
-      // required string accession = 1;
-      private java.lang.Object accession_ = "";
+      // required string id = 1;
+      private java.lang.Object id_ = "";
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string id = 1;</code>
        */
-      public boolean hasAccession() {
+      public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string accession = 2;
+      private java.lang.Object accession_ = "";
+      /**
+       * <code>required string accession = 2;</code>
+       */
+      public boolean hasAccession() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string accession = 2;</code>
        */
       public java.lang.String getAccession() {
         java.lang.Object ref = accession_;
@@ -6261,7 +6672,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAccessionBytes() {
@@ -6277,51 +6688,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder setAccession(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         accession_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder clearAccession() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         accession_ = getDefaultInstance().getAccession();
         onChanged();
         return this;
       }
       /**
-       * <code>required string accession = 1;</code>
+       * <code>required string accession = 2;</code>
        */
       public Builder setAccessionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         accession_ = value;
         onChanged();
         return this;
       }
 
-      // required string seqid = 2;
+      // required string seqid = 3;
       private java.lang.Object seqid_ = "";
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public boolean hasSeqid() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public java.lang.String getSeqid() {
         java.lang.Object ref = seqid_;
@@ -6335,7 +6746,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSeqidBytes() {
@@ -6351,51 +6762,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public Builder setSeqid(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         seqid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public Builder clearSeqid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         seqid_ = getDefaultInstance().getSeqid();
         onChanged();
         return this;
       }
       /**
-       * <code>required string seqid = 2;</code>
+       * <code>required string seqid = 3;</code>
        */
       public Builder setSeqidBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         seqid_ = value;
         onChanged();
         return this;
       }
 
-      // required string source = 3;
+      // required string source = 4;
       private java.lang.Object source_ = "";
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public boolean hasSource() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -6409,7 +6820,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -6425,51 +6836,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public Builder setSource(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         source_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public Builder clearSource() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         source_ = getDefaultInstance().getSource();
         onChanged();
         return this;
       }
       /**
-       * <code>required string source = 3;</code>
+       * <code>required string source = 4;</code>
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         source_ = value;
         onChanged();
         return this;
       }
 
-      // required string ftype = 4;
+      // required string ftype = 5;
       private java.lang.Object ftype_ = "";
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public boolean hasFtype() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public java.lang.String getFtype() {
         java.lang.Object ref = ftype_;
@@ -6483,7 +6894,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public com.google.protobuf.ByteString
           getFtypeBytes() {
@@ -6499,117 +6910,117 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public Builder setFtype(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         ftype_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public Builder clearFtype() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         ftype_ = getDefaultInstance().getFtype();
         onChanged();
         return this;
       }
       /**
-       * <code>required string ftype = 4;</code>
+       * <code>required string ftype = 5;</code>
        */
       public Builder setFtypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         ftype_ = value;
         onChanged();
         return this;
       }
 
-      // required int64 start = 5;
+      // required int64 start = 6;
       private long start_ ;
       /**
-       * <code>required int64 start = 5;</code>
+       * <code>required int64 start = 6;</code>
        */
       public boolean hasStart() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required int64 start = 5;</code>
+       * <code>required int64 start = 6;</code>
        */
       public long getStart() {
         return start_;
       }
       /**
-       * <code>required int64 start = 5;</code>
+       * <code>required int64 start = 6;</code>
        */
       public Builder setStart(long value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         start_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 start = 5;</code>
+       * <code>required int64 start = 6;</code>
        */
       public Builder clearStart() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         start_ = 0L;
         onChanged();
         return this;
       }
 
-      // required int64 end = 6;
+      // required int64 end = 7;
       private long end_ ;
       /**
-       * <code>required int64 end = 6;</code>
+       * <code>required int64 end = 7;</code>
        */
       public boolean hasEnd() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required int64 end = 6;</code>
+       * <code>required int64 end = 7;</code>
        */
       public long getEnd() {
         return end_;
       }
       /**
-       * <code>required int64 end = 6;</code>
+       * <code>required int64 end = 7;</code>
        */
       public Builder setEnd(long value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         end_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 end = 6;</code>
+       * <code>required int64 end = 7;</code>
        */
       public Builder clearEnd() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         end_ = 0L;
         onChanged();
         return this;
       }
 
-      // required string score = 7;
+      // required string score = 8;
       private java.lang.Object score_ = "";
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public boolean hasScore() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public java.lang.String getScore() {
         java.lang.Object ref = score_;
@@ -6623,7 +7034,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public com.google.protobuf.ByteString
           getScoreBytes() {
@@ -6639,51 +7050,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public Builder setScore(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000080;
         score_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         score_ = getDefaultInstance().getScore();
         onChanged();
         return this;
       }
       /**
-       * <code>required string score = 7;</code>
+       * <code>required string score = 8;</code>
        */
       public Builder setScoreBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000080;
         score_ = value;
         onChanged();
         return this;
       }
 
-      // required string strand = 8;
+      // required string strand = 9;
       private java.lang.Object strand_ = "";
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public boolean hasStrand() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public java.lang.String getStrand() {
         java.lang.Object ref = strand_;
@@ -6697,7 +7108,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public com.google.protobuf.ByteString
           getStrandBytes() {
@@ -6713,51 +7124,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public Builder setStrand(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000100;
         strand_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public Builder clearStrand() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         strand_ = getDefaultInstance().getStrand();
         onChanged();
         return this;
       }
       /**
-       * <code>required string strand = 8;</code>
+       * <code>required string strand = 9;</code>
        */
       public Builder setStrandBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000100;
         strand_ = value;
         onChanged();
         return this;
       }
 
-      // required string phase = 9;
+      // required string phase = 10;
       private java.lang.Object phase_ = "";
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public boolean hasPhase() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public java.lang.String getPhase() {
         java.lang.Object ref = phase_;
@@ -6771,7 +7182,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public com.google.protobuf.ByteString
           getPhaseBytes() {
@@ -6787,48 +7198,48 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public Builder setPhase(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         phase_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public Builder clearPhase() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         phase_ = getDefaultInstance().getPhase();
         onChanged();
         return this;
       }
       /**
-       * <code>required string phase = 9;</code>
+       * <code>required string phase = 10;</code>
        */
       public Builder setPhaseBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         phase_ = value;
         onChanged();
         return this;
       }
 
-      // repeated .boa.types.Attribute attribute = 10;
+      // repeated .boa.types.Attribute attribute = 11;
       private java.util.List<boa.types.GFeature.Attribute> attribute_ =
         java.util.Collections.emptyList();
       private void ensureAttributeIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           attribute_ = new java.util.ArrayList<boa.types.GFeature.Attribute>(attribute_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -6836,7 +7247,7 @@ public final class GFeature {
           boa.types.GFeature.Attribute, boa.types.GFeature.Attribute.Builder, boa.types.GFeature.AttributeOrBuilder> attributeBuilder_;
 
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public java.util.List<boa.types.GFeature.Attribute> getAttributeList() {
         if (attributeBuilder_ == null) {
@@ -6846,7 +7257,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public int getAttributeCount() {
         if (attributeBuilder_ == null) {
@@ -6856,7 +7267,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public boa.types.GFeature.Attribute getAttribute(int index) {
         if (attributeBuilder_ == null) {
@@ -6866,7 +7277,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder setAttribute(
           int index, boa.types.GFeature.Attribute value) {
@@ -6883,7 +7294,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder setAttribute(
           int index, boa.types.GFeature.Attribute.Builder builderForValue) {
@@ -6897,7 +7308,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder addAttribute(boa.types.GFeature.Attribute value) {
         if (attributeBuilder_ == null) {
@@ -6913,7 +7324,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder addAttribute(
           int index, boa.types.GFeature.Attribute value) {
@@ -6930,7 +7341,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder addAttribute(
           boa.types.GFeature.Attribute.Builder builderForValue) {
@@ -6944,7 +7355,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder addAttribute(
           int index, boa.types.GFeature.Attribute.Builder builderForValue) {
@@ -6958,7 +7369,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder addAllAttribute(
           java.lang.Iterable<? extends boa.types.GFeature.Attribute> values) {
@@ -6972,12 +7383,12 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder clearAttribute() {
         if (attributeBuilder_ == null) {
           attribute_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           attributeBuilder_.clear();
@@ -6985,7 +7396,7 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public Builder removeAttribute(int index) {
         if (attributeBuilder_ == null) {
@@ -6998,14 +7409,14 @@ public final class GFeature {
         return this;
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public boa.types.GFeature.Attribute.Builder getAttributeBuilder(
           int index) {
         return getAttributeFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public boa.types.GFeature.AttributeOrBuilder getAttributeOrBuilder(
           int index) {
@@ -7015,7 +7426,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public java.util.List<? extends boa.types.GFeature.AttributeOrBuilder> 
            getAttributeOrBuilderList() {
@@ -7026,14 +7437,14 @@ public final class GFeature {
         }
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public boa.types.GFeature.Attribute.Builder addAttributeBuilder() {
         return getAttributeFieldBuilder().addBuilder(
             boa.types.GFeature.Attribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public boa.types.GFeature.Attribute.Builder addAttributeBuilder(
           int index) {
@@ -7041,7 +7452,7 @@ public final class GFeature {
             index, boa.types.GFeature.Attribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .boa.types.Attribute attribute = 10;</code>
+       * <code>repeated .boa.types.Attribute attribute = 11;</code>
        */
       public java.util.List<boa.types.GFeature.Attribute.Builder> 
            getAttributeBuilderList() {
@@ -7054,7 +7465,7 @@ public final class GFeature {
           attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               boa.types.GFeature.Attribute, boa.types.GFeature.Attribute.Builder, boa.types.GFeature.AttributeOrBuilder>(
                   attribute_,
-                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  ((bitField0_ & 0x00000400) == 0x00000400),
                   getParentForChildren(),
                   isClean());
           attribute_ = null;
@@ -7062,16 +7473,16 @@ public final class GFeature {
         return attributeBuilder_;
       }
 
-      // optional string parent = 11;
+      // optional string parent = 12;
       private java.lang.Object parent_ = "";
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public boolean hasParent() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public java.lang.String getParent() {
         java.lang.Object ref = parent_;
@@ -7085,7 +7496,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public com.google.protobuf.ByteString
           getParentBytes() {
@@ -7101,36 +7512,36 @@ public final class GFeature {
         }
       }
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public Builder setParent(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         parent_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public Builder clearParent() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         parent_ = getDefaultInstance().getParent();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string parent = 11;</code>
+       * <code>optional string parent = 12;</code>
        */
       public Builder setParentBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         parent_ = value;
         onChanged();
         return this;
@@ -7150,32 +7561,47 @@ public final class GFeature {
   public interface AttributeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string tag = 1;
+    // required string id = 1;
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>required string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    // required string tag = 2;
+    /**
+     * <code>required string tag = 2;</code>
      */
     boolean hasTag();
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string tag = 2;</code>
      */
     java.lang.String getTag();
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string tag = 2;</code>
      */
     com.google.protobuf.ByteString
         getTagBytes();
 
-    // required string value = 2;
+    // required string value = 3;
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     boolean hasValue();
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     java.lang.String getValue();
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     com.google.protobuf.ByteString
         getValueBytes();
@@ -7233,11 +7659,16 @@ public final class GFeature {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              tag_ = input.readBytes();
+              id_ = input.readBytes();
               break;
             }
             case 18: {
               bitField0_ |= 0x00000002;
+              tag_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
               value_ = input.readBytes();
               break;
             }
@@ -7281,17 +7712,60 @@ public final class GFeature {
     }
 
     private int bitField0_;
-    // required string tag = 1;
-    public static final int TAG_FIELD_NUMBER = 1;
-    private java.lang.Object tag_;
+    // required string id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private java.lang.Object id_;
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string id = 1;</code>
      */
-    public boolean hasTag() {
+    public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string tag = 2;
+    public static final int TAG_FIELD_NUMBER = 2;
+    private java.lang.Object tag_;
+    /**
+     * <code>required string tag = 2;</code>
+     */
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string tag = 2;</code>
      */
     public java.lang.String getTag() {
       java.lang.Object ref = tag_;
@@ -7308,7 +7782,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string tag = 1;</code>
+     * <code>required string tag = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTagBytes() {
@@ -7324,17 +7798,17 @@ public final class GFeature {
       }
     }
 
-    // required string value = 2;
-    public static final int VALUE_FIELD_NUMBER = 2;
+    // required string value = 3;
+    public static final int VALUE_FIELD_NUMBER = 3;
     private java.lang.Object value_;
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     public boolean hasValue() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -7351,7 +7825,7 @@ public final class GFeature {
       }
     }
     /**
-     * <code>required string value = 2;</code>
+     * <code>required string value = 3;</code>
      */
     public com.google.protobuf.ByteString
         getValueBytes() {
@@ -7368,6 +7842,7 @@ public final class GFeature {
     }
 
     private void initFields() {
+      id_ = "";
       tag_ = "";
       value_ = "";
     }
@@ -7376,6 +7851,10 @@ public final class GFeature {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasTag()) {
         memoizedIsInitialized = 0;
         return false;
@@ -7392,10 +7871,13 @@ public final class GFeature {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getTagBytes());
+        output.writeBytes(1, getIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getValueBytes());
+        output.writeBytes(2, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getValueBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -7408,11 +7890,15 @@ public final class GFeature {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getTagBytes());
+          .computeBytesSize(1, getIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getValueBytes());
+          .computeBytesSize(2, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getValueBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7530,10 +8016,12 @@ public final class GFeature {
 
       public Builder clear() {
         super.clear();
-        tag_ = "";
+        id_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        value_ = "";
+        tag_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -7565,9 +8053,13 @@ public final class GFeature {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.tag_ = tag_;
+        result.id_ = id_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
+        }
+        result.tag_ = tag_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.value_ = value_;
         result.bitField0_ = to_bitField0_;
@@ -7586,13 +8078,18 @@ public final class GFeature {
 
       public Builder mergeFrom(boa.types.GFeature.Attribute other) {
         if (other == boa.types.GFeature.Attribute.getDefaultInstance()) return this;
-        if (other.hasTag()) {
+        if (other.hasId()) {
           bitField0_ |= 0x00000001;
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.hasTag()) {
+          bitField0_ |= 0x00000002;
           tag_ = other.tag_;
           onChanged();
         }
         if (other.hasValue()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           value_ = other.value_;
           onChanged();
         }
@@ -7601,6 +8098,10 @@ public final class GFeature {
       }
 
       public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
         if (!hasTag()) {
           
           return false;
@@ -7631,16 +8132,90 @@ public final class GFeature {
       }
       private int bitField0_;
 
-      // required string tag = 1;
-      private java.lang.Object tag_ = "";
+      // required string id = 1;
+      private java.lang.Object id_ = "";
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string id = 1;</code>
        */
-      public boolean hasTag() {
+      public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string tag = 2;
+      private java.lang.Object tag_ = "";
+      /**
+       * <code>required string tag = 2;</code>
+       */
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string tag = 2;</code>
        */
       public java.lang.String getTag() {
         java.lang.Object ref = tag_;
@@ -7654,7 +8229,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string tag = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTagBytes() {
@@ -7670,51 +8245,51 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string tag = 2;</code>
        */
       public Builder setTag(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         tag_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string tag = 2;</code>
        */
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       /**
-       * <code>required string tag = 1;</code>
+       * <code>required string tag = 2;</code>
        */
       public Builder setTagBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         tag_ = value;
         onChanged();
         return this;
       }
 
-      // required string value = 2;
+      // required string value = 3;
       private java.lang.Object value_ = "";
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public boolean hasValue() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -7728,7 +8303,7 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
@@ -7744,36 +8319,36 @@ public final class GFeature {
         }
       }
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public Builder setValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
       /**
-       * <code>required string value = 2;</code>
+       * <code>required string value = 3;</code>
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         value_ = value;
         onChanged();
         return this;
@@ -7837,25 +8412,25 @@ public final class GFeature {
       "\n\016GFeature.proto\022\tboa.types\"\177\n\006Genome\022\016\n" +
       "\006refseq\030\001 \002(\t\022\r\n\005taxid\030\002 \002(\t\022%\n\010sequence" +
       "\030\003 \003(\0132\023.boa.types.Sequence\022/\n\rassembler" +
-      "Root\030\004 \001(\0132\030.boa.types.AssemblerRoot\"Z\n\010" +
-      "Sequence\022\021\n\taccession\030\001 \002(\t\022\016\n\006header\030\002 " +
-      "\002(\t\022+\n\013featureRoot\030\003 \001(\0132\026.boa.types.Fea" +
-      "tureRoot\"\347\001\n\rAssemblerRoot\022\016\n\006refseq\030\001 \001" +
-      "(\t\022\'\n\tassembler\030\002 \003(\0132\024.boa.types.Assemb" +
-      "ler\022\024\n\014total_length\030\003 \001(\003\022\026\n\016scaffold_co" +
-      "unt\030\004 \001(\003\022\024\n\014scaffold_N50\030\005 \001(\003\022\022\n\nconti",
-      "g_N50\030\006 \001(\003\022\024\n\014contig_count\030\007 \001(\003\022\030\n\020tot" +
-      "al_gap_length\030\010 \001(\003\022\025\n\rassembly_date\030\t \001" +
-      "(\004\"\'\n\tAssembler\022\014\n\004name\030\001 \002(\t\022\014\n\004desc\030\002 " +
-      "\002(\t\"B\n\013FeatureRoot\022\016\n\006refseq\030\001 \001(\t\022#\n\007fe" +
-      "ature\030\002 \003(\0132\022.boa.types.Feature\"\315\001\n\007Feat" +
-      "ure\022\021\n\taccession\030\001 \002(\t\022\r\n\005seqid\030\002 \002(\t\022\016\n" +
-      "\006source\030\003 \002(\t\022\r\n\005ftype\030\004 \002(\t\022\r\n\005start\030\005 " +
-      "\002(\003\022\013\n\003end\030\006 \002(\003\022\r\n\005score\030\007 \002(\t\022\016\n\006stran" +
-      "d\030\010 \002(\t\022\r\n\005phase\030\t \002(\t\022\'\n\tattribute\030\n \003(" +
-      "\0132\024.boa.types.Attribute\022\016\n\006parent\030\013 \001(\t\"",
-      "\'\n\tAttribute\022\013\n\003tag\030\001 \002(\t\022\r\n\005value\030\002 \002(\t" +
-      "B\002H\001"
+      "Root\030\004 \001(\0132\030.boa.types.AssemblerRoot\"j\n\010" +
+      "Sequence\022\016\n\006refseq\030\001 \002(\t\022\021\n\taccession\030\002 " +
+      "\002(\t\022\016\n\006header\030\003 \002(\t\022+\n\013featureRoot\030\004 \001(\013" +
+      "2\026.boa.types.FeatureRoot\"\320\001\n\rAssemblerRo" +
+      "ot\022\016\n\006refseq\030\001 \001(\t\022\'\n\tassembler\030\002 \003(\0132\024." +
+      "boa.types.Assembler\022\024\n\014total_length\030\003 \001(" +
+      "\003\022\026\n\016scaffold_count\030\004 \001(\003\022\024\n\014scaffold_N5",
+      "0\030\005 \001(\003\022\022\n\ncontig_N50\030\006 \001(\003\022\024\n\014contig_co" +
+      "unt\030\007 \001(\003\022\030\n\020total_gap_length\030\010 \001(\003\"7\n\tA" +
+      "ssembler\022\016\n\006refseq\030\001 \002(\t\022\014\n\004name\030\002 \002(\t\022\014" +
+      "\n\004desc\030\003 \002(\t\"B\n\013FeatureRoot\022\016\n\006refseq\030\001 " +
+      "\001(\t\022#\n\007feature\030\002 \003(\0132\022.boa.types.Feature" +
+      "\"\331\001\n\007Feature\022\n\n\002id\030\001 \002(\t\022\021\n\taccession\030\002 " +
+      "\002(\t\022\r\n\005seqid\030\003 \002(\t\022\016\n\006source\030\004 \002(\t\022\r\n\005ft" +
+      "ype\030\005 \002(\t\022\r\n\005start\030\006 \002(\003\022\013\n\003end\030\007 \002(\003\022\r\n" +
+      "\005score\030\010 \002(\t\022\016\n\006strand\030\t \002(\t\022\r\n\005phase\030\n " +
+      "\002(\t\022\'\n\tattribute\030\013 \003(\0132\024.boa.types.Attri",
+      "bute\022\016\n\006parent\030\014 \001(\t\"3\n\tAttribute\022\n\n\002id\030" +
+      "\001 \002(\t\022\013\n\003tag\030\002 \002(\t\022\r\n\005value\030\003 \002(\tB\002H\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -7873,19 +8448,19 @@ public final class GFeature {
           internal_static_boa_types_Sequence_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Sequence_descriptor,
-              new java.lang.String[] { "Accession", "Header", "FeatureRoot", });
+              new java.lang.String[] { "Refseq", "Accession", "Header", "FeatureRoot", });
           internal_static_boa_types_AssemblerRoot_descriptor =
             getDescriptor().getMessageTypes().get(2);
           internal_static_boa_types_AssemblerRoot_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_AssemblerRoot_descriptor,
-              new java.lang.String[] { "Refseq", "Assembler", "TotalLength", "ScaffoldCount", "ScaffoldN50", "ContigN50", "ContigCount", "TotalGapLength", "AssemblyDate", });
+              new java.lang.String[] { "Refseq", "Assembler", "TotalLength", "ScaffoldCount", "ScaffoldN50", "ContigN50", "ContigCount", "TotalGapLength", });
           internal_static_boa_types_Assembler_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_boa_types_Assembler_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Assembler_descriptor,
-              new java.lang.String[] { "Name", "Desc", });
+              new java.lang.String[] { "Refseq", "Name", "Desc", });
           internal_static_boa_types_FeatureRoot_descriptor =
             getDescriptor().getMessageTypes().get(4);
           internal_static_boa_types_FeatureRoot_fieldAccessorTable = new
@@ -7897,13 +8472,13 @@ public final class GFeature {
           internal_static_boa_types_Feature_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Feature_descriptor,
-              new java.lang.String[] { "Accession", "Seqid", "Source", "Ftype", "Start", "End", "Score", "Strand", "Phase", "Attribute", "Parent", });
+              new java.lang.String[] { "Id", "Accession", "Seqid", "Source", "Ftype", "Start", "End", "Score", "Strand", "Phase", "Attribute", "Parent", });
           internal_static_boa_types_Attribute_descriptor =
             getDescriptor().getMessageTypes().get(6);
           internal_static_boa_types_Attribute_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Attribute_descriptor,
-              new java.lang.String[] { "Tag", "Value", });
+              new java.lang.String[] { "Id", "Tag", "Value", });
           return null;
         }
       };

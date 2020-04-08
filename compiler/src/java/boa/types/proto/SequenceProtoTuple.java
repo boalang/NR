@@ -19,14 +19,14 @@ import boa.types.*;
 	static {
 		int counter = 0;
 
-		names.put("accession", counter++);
+		names.put("seqid", counter++);
 		members.add(new BoaString());
 
-		names.put("header", counter++);
-		members.add(new BoaString());
+		names.put("annotation", counter++);
+		members.add(new BoaProtoList( new AnnotationProtoTuple()));
 
-		names.put("featureRoot", counter++);
-		members.add(new FeatureRootProtoTuple());
+		names.put("cluster", counter++);
+		members.add(new BoaProtoList(new ClusterProtoTuple()));
 
 
 		}
@@ -42,7 +42,7 @@ import boa.types.*;
 	/** @{inheritDoc} */
 	@Override
 	public String toJavaType() {
-		return "boa.types.GFeature.Sequence";
+		return "boa.types.Nr2.Sequence";
 	}
 
  }

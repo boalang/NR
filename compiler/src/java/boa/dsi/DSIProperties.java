@@ -41,8 +41,6 @@ public class DSIProperties {
 	public static final String HADOOP_SEQ_FILE_LOCATION = CANDOIA_OUTPUT_PATH;
 	public static final String HADOOP_SEQ_FILE_NAME = "genomes.seq";
 	public static final String HADOOP_NR_FILE_NAME = "nr.seq";
-	public static final String HADOOP_SRA_FILE_NAME = "sra.seq";
-
 	public static final String HADOOP_ANNOTAIONS_FILE_NAME = "annotations.seq";
 
 	public static final String HADOOP_Assembler_FILE_NAME = "assemblers.seq";

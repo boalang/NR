@@ -29,24 +29,20 @@ public class DataGen {
 		// external : Which AbstractDataSource to use to parse the data
 		SequenceFileStorage storage = new SequenceFileStorage(output, external);
 
-		// UnDoc following command to create new sequence file
+		// Uncomment following command to create new sequence file
 		// storage.store(eSourceIStorage);
 
-		//Generate Refseq dataset
-		storage.store(rawPath);
-		
-		//Generate NR dataset.
-		//if (rawPath.endsWith(".clstr")) {
-			// Store Refseq dataset
+		if (rawPath.endsWith(".clstr")) {
+			//Uncomment this if you want to Store Refseq dataset
 			//storage.store_cdhit(rawPath);
-		//}
+		}
 
-		//else {
+		else {
 			
-			// store annotations
-		//	storage.store_joined(rawPath);
+			// uncomment following if you want to store annotations database
+			storage.store_joined(rawPath);
 
-		//}
+		}
 
 	}
 }

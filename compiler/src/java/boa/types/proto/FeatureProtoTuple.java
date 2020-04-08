@@ -19,6 +19,9 @@ import boa.types.*;
 	static {
 		int counter = 0;
 
+		names.put("id", counter++);
+		members.add(new BoaString());
+
 		names.put("accession", counter++);
 		members.add(new BoaString());
 
@@ -47,7 +50,7 @@ import boa.types.*;
 		members.add(new BoaString());
 
 		names.put("attribute", counter++);
-		members.add(new BoaProtoList( new AttributeProtoTuple()));
+		members.add(new AttributeProtoTuple());
 
 		names.put("parent", counter++);
 		members.add(new BoaString());

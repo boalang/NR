@@ -18,7 +18,7 @@ public class JSONGen {
 	public static void main(String[] args) {
 
 		String output = args[0]; // where should the output go
-		String rawPath = args[1]; // path of the raw files
+		String rawPath = args[1];
 
 		ArrayList<String> sources = new ArrayList<String>();
 
@@ -29,13 +29,7 @@ public class JSONGen {
 		// external : Which AbstractDataSource to use to parse the data
 		SequenceFileStorage storage = new SequenceFileStorage(output, external);
 
-		// generate JSON file from the NR raw flat file
-		//storage.store_json(rawPath);
-		
-		
-		// generate the JSON file for RefSeq project
-		storage.store_RefSeq_Json(rawPath);
-		
+		storage.store_json(rawPath);
 
 	}
 }

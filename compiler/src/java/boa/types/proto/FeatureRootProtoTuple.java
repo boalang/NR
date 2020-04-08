@@ -23,7 +23,7 @@ import boa.types.*;
 		members.add(new BoaString());
 
 		names.put("feature", counter++);
-		members.add(new  BoaProtoList(new FeatureProtoTuple()));
+		members.add(new BoaProtoList(new FeatureProtoTuple()));
 
 
 		}

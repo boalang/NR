@@ -10,12 +10,8 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -72,7 +68,6 @@ public class SequenceFileStorage extends AbstractStorage {
 	static long contig_N50, contig_count = 0;
 	static long scaffold_N50, scaffold_count = 0;
 	static String refseqID = null, taxID;
-	static long assembly_date=0;
 
 	public SequenceFileStorage(String location, AbstractSource parser) {
 		super(location, parser);
@@ -176,7 +171,7 @@ public class SequenceFileStorage extends AbstractStorage {
 							fb = Feature.newBuilder();
 							if (feature.seqname().equals(seq)) {
 								String[] rec = feature.toString().split("\t");
-								
+								fb.setId(feature.getAttribute("ID"));
 								if (feature.hasAttribute("Parent"))
 									fb.setParent(feature.getAttribute("Parent"));
 								fb.setAccession(rec[0]);
@@ -195,7 +190,7 @@ public class SequenceFileStorage extends AbstractStorage {
 									// entry.getKey() + " value: "+
 									// entry.getValue());
 									ab = Attribute.newBuilder();
-									
+									ab.setId(feature.getAttribute("ID"));
 									ab.setTag(entry.getKey());
 									ab.setValue(entry.getValue());
 									fb.addAttribute(ab.build());
@@ -210,22 +205,7 @@ public class SequenceFileStorage extends AbstractStorage {
 						gb.addSequence(sb.build());
 
 					}
-					// Bind all assemblers to the current genome file
-					// Assembler.Builder ab = null;
-					// for (String assembler : assemblers) {
-					// ab = Assembler.newBuilder();
-					// ab.setRefseq(taxID);
-					// String[] data = assembler.split("\\s+");
-					// ab.setName(data[1]);
-					// ab.setDesc(assembler);
-					//
-					// gb.addAssembler(ab.build());
-					//
-					// }
-
-					// Write to the sequence file
-					// System.out.println(sb.build());
-					// data.add(sb.build());
+					
 					try {
 						// write message TODO: use text file for save messages.
 						// Get the key?
@@ -248,20 +228,7 @@ public class SequenceFileStorage extends AbstractStorage {
 
 		}
 
-		// ##############
 
-		// for (GeneratedMessage data : dataInstance) {
-		// try {
-		// // write message TODO: use text file for save messages.
-		// // Get the key?
-		// String key = Sequence.parseFrom(data.toByteArray()).getAccession();
-		// this.seqFileWriter.append(new Text(key), new
-		// BytesWritable(data.toByteArray()));
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		// }
 		this.closeWrite();
 	}
 
@@ -636,183 +603,6 @@ public class SequenceFileStorage extends AbstractStorage {
 
 	}
 
-//	public void store_annotations(String path){
-//
-//
-//		System.out.println("Inside store Hadoop sequence File Path " + DSIProperties.HADOOP_SEQ_FILE_LOCATION + location
-//				+ DSIProperties.HADOOP_ANNOTAIONS_FILE_NAME);
-//
-//		this.openAnnotationWriter(DSIProperties.HADOOP_SEQ_FILE_LOCATION + location );
-//		
-//		File file= new File(path);
-//		
-//		Scanner sc = null;
-//		try {
-//			sc = new Scanner(file);
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		boa.types.Nr.Annotation.Builder ab = null;
-//		
-//		while (sc.hasNextLine()){
-//			String line = sc.nextLine();
-//			
-//			String[] ann= line.split("");
-//			String[] words = ann[0].split(" ");
-//			String key =words[0].substring(words[0].indexOf(">")+1);
-//			
-//			ab= Annotation.newBuilder();
-//			ab.setSeqid(key);
-//			ab.setDefline(line);
-//			//System.out.println("key: " + key);
-//			
-//			try {
-//				this.annotations_seqFileWriter.append(new Text(String.valueOf(key)),
-//						new BytesWritable(ab.build().toByteArray()));
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//
-//			
-//			
-//		}
-//		
-//		
-//		this.closeWrite();
-//		
-//	}
-
-//	public void store_cdhit(String path){
-//
-//		// TODO Auto-generated method stub
-//
-//		System.out.println("Inside store Hadoop sequence File Path " + DSIProperties.HADOOP_SEQ_FILE_LOCATION  + location 
-//				+ DSIProperties.HADOOP_NR_FILE_NAME);
-//
-//		this.openNRWriter(DSIProperties.HADOOP_SEQ_FILE_LOCATION + location);
-//		
-//		
-//
-//		File file = new File(path);
-//		Scanner sc = null;
-//		try {
-//			sc = new Scanner(file);
-//		} catch (FileNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		String line1 = "", line2 = "";
-//		int clusterID = -1;
-//		String[] pos=null;
-//
-//
-//		boa.types.Nr.Sequence.Builder sb = null;
-//		Cluster.Builder cb = null;
-//
-//		while (sc.hasNextLine()) {
-//			line1 = sc.nextLine();
-//			
-////			String cmd= "less env_nr_annotation2 | grep \"VAX37673.1\"";
-////			String reads= runCmd(cmd);
-////			System.out.println(reads);
-//
-//			if (line1.startsWith(">")) {
-//				System.out.println(line1);
-//
-//				if (clusterID != -1) { // new record must save cluster and all sequences belong to this cluster
-//					// write the record to the disk
-//
-//					try {
-//						this.nr_seqFileWriter.append(new Text(String.valueOf(clusterID)),
-//								new BytesWritable(cb.build().toByteArray()));
-//					} catch (IOException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//
-//				}
-//
-//				cb = Cluster.newBuilder();
-//
-//				clusterID = Integer.parseInt(line1.substring(line1.indexOf(" ") + 1));
-//				cb.setId(line1.substring(line1.indexOf(" ") + 1)); // cluster id eg. >Cluster 4
-//				cb.setSimilarity(95); //FIXME different similarity level
-//
-//				line2 = sc.nextLine();
-//
-//				if (!line2.startsWith(">")) {
-//
-//					// same cluster
-//
-//					String[] rep = line2.split("\\s+");
-//					int cl_length = Integer.parseInt(rep[1].substring(0, rep[1].indexOf("aa")));
-//					String rep_id = rep[2].substring(1, rep[2].indexOf("..."));
-//					// representative sample
-//					if (line2.endsWith("*")) {
-//						System.out.println("rep: " + line2);
-//
-//						cb.setSeqid(rep_id);
-//						cb.setLength(cl_length);
-//
-//					} else { // sequences belong to the current cluster
-//						sb = boa.types.Nr.Sequence.newBuilder();
-//						sb.setSeqid(rep_id);
-//						sb.setLength(cl_length);
-//						//sb.setSeq(line2);  //not needed at this point
-//						
-//						pos= rep[4].split(":");		
-//						sb.setStart(Integer.parseInt(pos[0]));
-//						sb.setStop(Integer.parseInt(pos[1]));
-//						sb.setRepStart(Integer.parseInt(pos[2]));
-//						sb.setRepStop(Integer.parseInt(pos[3].split("/")[0]));
-//						sb.setSimilarity(Integer.parseInt(pos[3].split("/")[1].substring(0,2)));
-//						sb.setTaxonomy(""); // FIXME taxonomy name
-//
-//						cb.addSequence(sb);
-//					}
-//				}
-//
-//			} else {
-//				// same cluster:
-//
-//				String[] rep = line1.split("\\s+");
-//				int cl_length = Integer.parseInt(rep[1].substring(0, rep[1].indexOf("aa")));
-//				String rep_id = rep[2].substring(1, rep[2].indexOf("..."));
-//
-//				if (line1.endsWith("*")) { // representative sequence
-//
-//					cb.setSeqid(rep_id);
-//					cb.setLength(cl_length);
-//
-//				} else { // sequence
-//
-//					sb = boa.types.Nr.Sequence.newBuilder();
-//					sb.setSeqid(rep_id);
-//					sb.setLength(cl_length);
-//					//sb.setSeq(line2); 
-//					pos= rep[4].split(":");		
-//					sb.setStart(Integer.parseInt(pos[0]));
-//					sb.setStop(Integer.parseInt(pos[1]));
-//					sb.setRepStart(Integer.parseInt(pos[2]));
-//					sb.setRepStop(Integer.parseInt(pos[3].split("/")[0]));
-//					sb.setSimilarity(Integer.parseInt(pos[3].split("/")[1].substring(0,2)));
-//					sb.setTaxonomy(""); // FIXME
-//
-//					cb.addSequence(sb);
-//				}
-//
-//			}
-//
-//		}
-//
-//	
-//
-//		this.closeWrite();
-//		
-//	}
 
 	public static String runCmd(String cmd) {
 		Runtime rt = Runtime.getRuntime();
@@ -859,12 +649,10 @@ public class SequenceFileStorage extends AbstractStorage {
 
 	@Override
 	public void store(String path) {
-		
-		System.out.println("Inside store Hadoop sequence File Path " + DSIProperties.HADOOP_SEQ_FILE_LOCATION + location
+		System.out.println("Inside store Hadoop sequence File Path " + DSIProperties.HADOOP_SEQ_FILE_LOCATION + "/"
 				+ DSIProperties.HADOOP_SEQ_FILE_NAME);
 
-		this.openRefSeqWriter(DSIProperties.HADOOP_SEQ_FILE_LOCATION + location);
-		
+		this.openWriter(DSIProperties.HADOOP_SEQ_FILE_LOCATION + "/");
 
 		List<File> GFF_fileList = new ArrayList<File>();
 
@@ -941,7 +729,7 @@ public class SequenceFileStorage extends AbstractStorage {
 
 							sb.setAccession(currAccessionID);
 							sb.setHeader(fileName);
-							
+							sb.setRefseq(refseqID);
 							frb.setRefseq(refseqID + "_" + currAccessionID);
 
 						} else if (!currAccessionID.equals(feature.seqname())) {
@@ -960,7 +748,7 @@ public class SequenceFileStorage extends AbstractStorage {
 							currAccessionID = feature.seqname();
 							sb.setAccession(currAccessionID);
 							sb.setHeader(fileName);
-							
+							sb.setRefseq(refseqID);
 							frb.setRefseq(refseqID + "_" + currAccessionID);
 						}
 
@@ -968,7 +756,7 @@ public class SequenceFileStorage extends AbstractStorage {
 						// it is a feature just add to the new FeatureRoot
 						fb = Feature.newBuilder();
 						String[] rec = feature.toString().split("\t");
-						
+						fb.setId(feature.getAttribute("ID"));
 						if (feature.hasAttribute("Parent")) {
 							fb.setParent(feature.getAttribute("Parent"));
 						}
@@ -984,6 +772,7 @@ public class SequenceFileStorage extends AbstractStorage {
 						Attribute.Builder attb = null;
 						for (Map.Entry<String, String> entry : feature.getAttributes().entrySet()) {
 							attb = Attribute.newBuilder();
+							attb.setId(feature.getAttribute("ID"));
 							attb.setTag(entry.getKey());
 							attb.setValue(entry.getValue());
 							fb.addAttribute(attb.build());
@@ -1011,31 +800,16 @@ public class SequenceFileStorage extends AbstractStorage {
 					arb.setScaffoldN50(scaffold_N50);
 					arb.setTotalGapLength(total_gap_length);
 					arb.setTotalLength(total_length);
-					arb.setAssemblyDate(assembly_date);
 
 					Assembler.Builder asb = null;
 					for (String assembler : assemblers) {
 						asb = Assembler.newBuilder();
-						
-						try {
-							String[] data = assembler.split("\\s+");
-							if (data.length >1) {
-							asb.setName(data[1]); //the first word would be assembler name
-							}else
-							{
-								asb.setName("");
-							}
-							// the rest of the string would be version etc about the assembler program
-							// only if the number of words are >2
-							if (data.length>2)
-							   asb.setDesc(assembler.substring(assembler.indexOf(data[2]))); 
-							else
-								asb.setDesc("");
-							arb.addAssembler(asb.build());
-						} catch (Exception e) {
-							// TODO: handle exception
-						}
-						
+						asb.setRefseq(refseqID);
+						String[] data = assembler.split("\\s+");
+						asb.setName(data[1]);
+						asb.setDesc(assembler);
+
+						arb.addAssembler(asb.build());
 
 					}
 
@@ -1093,443 +867,10 @@ public class SequenceFileStorage extends AbstractStorage {
 
 		}
 
-		this.closeRefSeqWrite();
+		this.closeWrite();
 	}
 
 	
-public void store_RefSeq_Json(String path) {
-		
-		
-		File file_path = new File(path+"_converted");
-	
-		// location of json file on the disk
-		BufferedWriter file_modified = null;
-	
-		String strJson = "";
-
-		List<File> GFF_fileList = new ArrayList<File>();
-
-		// List of folders corresponds to the NCBI refseq
-		File[] directories = new File(path).listFiles(new FileFilter() {
-			@Override
-			public boolean accept(File file) {
-				return file.isDirectory();
-			}
-		});
-
-		if (directories.length == 0) {
-			directories = new File[1];
-			directories[0] = new File(path);
-		}
-		for (File folder : directories) {
-			GFF_fileList.addAll(Arrays.asList(getGFF(folder.getPath())));
-		}
-		// sources.addAll(Arrays.asList(directories));
-
-
-		HashMap<String, File> filemap = new HashMap<String, File>();
-		for (File file : GFF_fileList) {
-			filemap.put(file.getName(), file);
-		}
-
-		Map<String, File> sortedmap = new TreeMap(filemap);
-
-		GFF_fileList.clear();
-		for (Map.Entry<String, File> entry : sortedmap.entrySet()) {
-			GFF_fileList.add(entry.getValue());
-		}
-
-		for (File file : GFF_fileList) {
-
-			System.out.println("File Name: " + file.getName());
-
-			if (file.isFile()) {
-
-				
-
-				FeatureList fList;
-				try {
-					
-					strJson ="{";
-					
-					fList = GFF3Reader.read(file.getPath());
-
-					set_IDs(new File(file.getPath()));
-
-					String fileName = FilenameUtils.removeExtension(file.getName());
-					// String refseqID = fileName.substring(0, fileName.indexOf("genomic") - 1);
-					String assembly_stats = file.getPath().substring(0, file.getPath().indexOf("genomic"))
-							+ "assembly_stats.txt";
-					List<String> assemblers = get_assemblers(new File(assembly_stats));
-					
-					strJson += "\"seqid\":\"" + refseqID + "\",";
-					strJson += "\"taxid\":\"" + taxID + "\",";
-
-					strJson += "\"feature\" :[";
-
-					String currAccessionID = null;
-
-					
-					for (FeatureI feature : fList) {
-						
-						// write the json recod to the file and then clear the strJson variable
-						try {
-							FileWriter fstream = new FileWriter(file_path.getAbsolutePath() + ".json", true); // true for append
-							file_modified = new BufferedWriter(fstream);
-							file_modified.write(strJson + "\n");
-							
-							strJson=""; //we already have written all the info we had so far.
-						}
-
-						catch (IOException e) {
-							System.err.println("Error: " + e.getMessage());
-						}
-
-						finally {
-							if (file_modified != null) {
-								try {
-									file_modified.close();
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-							}
-						}
-						
-						
-
-						strJson += "{";
-						
-						if (currAccessionID == null) {
-							// new sequence region
-
-							currAccessionID = feature.seqname();
-
-
-						} else if (!currAccessionID.equals(feature.seqname())) {
-
-							currAccessionID = feature.seqname();
-				
-						}
-
-						// the same sequence region
-						// it is a feature just add to the new FeatureRoot
-						String[] rec = feature.toString().split("\t");
-						
-						strJson += "\"id\": \"" + feature.getAttribute("ID") + "\",";
-						
-						if (feature.hasAttribute("Parent")) {
-							//fb.setParent(feature.getAttribute("Parent"));
-						}						
-						
-						strJson += "\"accession\": \"" + rec[0] + "\",";
-						strJson += "\"source\": \"" + rec[1] + "\",";
-						strJson += "\"ftype\": \"" + rec[2] + "\",";
-						strJson += "\"start\": \"" + rec[3] + "\",";
-						strJson += "\"end\": " + rec[4] + ",";
-						strJson += "\"score\": \"" + rec[5] + "\",";
-						strJson += "\"phase\": \"" + rec[6] + "\",";
-						strJson += "\"strand\": \"" + rec[0] + "\",";
-						
-						strJson += "\"attribute\": ["  ;
-						for (Map.Entry<String, String> entry : feature.getAttributes().entrySet()) {
-							strJson += "{";							
-							strJson += "\"tag\": \"" + entry.getKey() + "\",";
-							strJson += "\"value\": \"" + entry.getValue() + "\"";
-							strJson += "},";
-						}
-
-						strJson = strJson.substring(0, strJson.length() - 1);
-						strJson +="]} ," ;
-						
-						
-						
-						
-						
-						
-						
-					}
-
-					strJson = strJson.substring(0, strJson.length() - 1);
-					strJson += "],";
-					
-					// IMP: save the last segment to the gb and save the
-					// featureroot before that
-					// Have to save in another seq file:
-					// sb.setFeatureRoot(frb.build());
-					
-					strJson += "\"assembler\": {";
-
-					strJson += "\"contig_count\": " + contig_count + ",";
-					
-					strJson += "\"contig_N50\": " + contig_N50 + ",";
-					strJson += "\"scaffold_count\": " + scaffold_count + ",";
-
-					strJson += "\"scaffold_N50\": " + scaffold_N50 + ",";
-					strJson += "\"total_gap_length\": " + total_gap_length + ",";
-					strJson += "\"total_length\": " + total_length + ",";
- 
-					strJson += "\"assembler\": [";
-					for (String assembler : assemblers) {
-						
-						strJson += " {";
-						
-						String[] data = assembler.split("\\s+");
-						strJson += "\"name\": \"" + data[1] + "\",";
-
-						strJson += "\"desc\": \"" + data[1] + "\"";
-
-						strJson += "},";
-
-					}
-					strJson = strJson.substring(0,strJson.length()-1);
-					strJson += "]} }";
-
-					
-					
-
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-
-			
-			// write the json recod to the file.
-			try {
-				FileWriter fstream = new FileWriter(file_path.getAbsolutePath() + ".json", true); // true for append
-				file_modified = new BufferedWriter(fstream);
-				file_modified.write(strJson + "\n");
-			}
-
-			catch (IOException e) {
-				System.err.println("Error: " + e.getMessage());
-			}
-
-			finally {
-				if (file_modified != null) {
-					try {
-						file_modified.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-
-			
-		}
-		
-
-	}
-
-
-	// @Override
-	// public void store(String path) {
-	// System.out.println("Inside store Hadoop sequence File Path
-	// "+DSIProperties.HADOOP_SEQ_FILE_LOCATION + "/" +
-	// DSIProperties.HADOOP_SEQ_FILE_NAME);
-	// this.openWriter(DSIProperties.HADOOP_SEQ_FILE_LOCATION + "/" +
-	// DSIProperties.HADOOP_SEQ_FILE_NAME);
-	//
-	//
-	//
-	// List<File> sources = new ArrayList<File>();
-	// //sources.addAll(Arrays.asList(getGFF(path)));
-	//
-	// //List of folders corresponds to the NCBI refseq
-	// File[] directories = new File(path).listFiles(new FileFilter() {
-	// @Override
-	// public boolean accept(File file) {
-	// return file.isDirectory();
-	// }
-	// });
-	//
-	// if (directories.length==0){
-	// directories=new File[1];
-	// directories[0]=new File(path);
-	// }
-	// for (File folder:directories){
-	// sources.addAll(Arrays.asList(getGFF(folder.getPath())));
-	// }
-	// //sources.addAll(Arrays.asList(directories));
-	//
-	//
-	// for (File file : sources) {
-	// if (file.isFile()) {
-	// FeatureList fList;
-	// try {
-	// fList = GFF3Reader.read(file.getPath());
-	//
-	// String taxID = get_taxID(new File(file.getPath()));
-	//
-	// String fileName = FilenameUtils.removeExtension(file.getName());
-	// String refseq=fileName.substring(0,fileName.indexOf("genomic")-1);
-	// String assembly_stats = file.getPath().substring(0,
-	// file.getPath().indexOf("genomic"))
-	// + "assembly_stats.txt";
-	// List<String> assemblers = get_assemblers(new File(assembly_stats));
-	//
-	// String outFile = file.getParentFile() + "/" + fileName + ".txt";
-	//
-	// Set<String> accessionSet = new HashSet<String>();
-	//
-	// Genome.Builder gb = Genome.newBuilder();
-	// gb.setTaxid(taxID);
-	// gb.setRefseq(refseq);
-	// gb.setContigCount(contig_count);
-	// gb.setContigN50(contig_N50);
-	// gb.setScaffoldCount(scaffold_count);
-	// gb.setScaffoldN50(scaffold_N50);
-	// gb.setTotalGapLength(total_gap_length);
-	// gb.setTotalLength(total_length);
-	//
-	//// for (FeatureI feature : fList) {
-	//// accessionSet.add(feature.seqname());
-	//// }
-	//
-	// String currKey=null;
-	// Sequence.Builder sb=null;
-	//
-	// for (FeatureI feature : fList) {
-	//
-	// if (currKey==null){
-	// //new sequence region
-	// sb = Sequence.newBuilder();
-	// currKey=feature.seqname();
-	// sb.setAccession(feature.seqname());
-	// sb.setHeader(fileName);
-	// sb.setRefseq(refseq);
-	//
-	// }
-	// else if(!currKey.equals(feature.seqname())){
-	// gb.addSequence(sb.build());
-	// //new sequence region
-	// sb = Sequence.newBuilder();
-	// currKey=feature.seqname();
-	// sb.setAccession(feature.seqname());
-	// sb.setHeader(fileName);
-	// sb.setRefseq(refseq);
-	//
-	// }
-	// //the same sequence region
-	// //it is a feature just add to the new sb
-	// Feature.Builder fb = Feature.newBuilder();
-	// String[] rec = feature.toString().split("\t");
-	// fb.setId(feature.getAttribute("ID"));
-	// if (feature.hasAttribute("Parent")){
-	// fb.setParent(feature.getAttribute("Parent"));
-	// }
-	// fb.setAccession(rec[0]);
-	// fb.setSeqid(rec[0]);
-	// fb.setSource(rec[1]);
-	// fb.setFtype(rec[2]);
-	// fb.setStart(Integer.parseInt(rec[3]));
-	// fb.setEnd(Integer.parseInt(rec[4]));
-	// fb.setScore(rec[5]);
-	// fb.setPhase(rec[6]);
-	// fb.setStrand(String.valueOf(feature.location().bioStrand()));
-	// Attribute.Builder ab = null;
-	// for (Map.Entry<String, String> entry :
-	// feature.getAttributes().entrySet()) {
-	// ab = Attribute.newBuilder();
-	// ab.setId(feature.getAttribute("ID"));
-	// ab.setTag(entry.getKey());
-	// ab.setValue(entry.getValue());
-	// fb.addAttribute(ab.build());
-	// }
-	// sb.addFeature(fb.build());
-	//
-	//
-	// }
-	//
-	// //save the last seqment to the gb
-	// gb.addSequence(sb.build());
-	//
-	//
-	//
-	//// for (String seq : accessionSet) {
-	//// Sequence.Builder sb = Sequence.newBuilder();
-	//// sb.setAccession(seq);
-	//// sb.setHeader(fileName);
-	//// sb.setTaxid(taxID);
-	////
-	//// Feature.Builder fb = null;
-	//// Iterator<FeatureI> it = fList.iterator();
-	//// for (FeatureI feature : fList) {
-	//// fb = Feature.newBuilder();
-	//// if (feature.seqname().equals(seq)) {
-	//// String[] rec = feature.toString().split("\t");
-	//// fb.setId(feature.getAttribute("ID"));
-	//// if (feature.hasAttribute("Parent"))
-	//// fb.setParent(feature.getAttribute("Parent"));
-	//// fb.setAccession(rec[0]);
-	//// fb.setSeqid(rec[0]);
-	//// fb.setSource(rec[1]);
-	//// fb.setFtype(rec[2]);
-	//// fb.setStart(Integer.parseInt(rec[3]));
-	//// fb.setEnd(Integer.parseInt(rec[4]));
-	//// fb.setScore(rec[5]);
-	//// fb.setPhase(rec[6]);
-	//// fb.setStrand(String.valueOf(feature.location().bioStrand()));
-	//// Attribute.Builder ab = null;
-	//// for (Map.Entry<String, String> entry :
-	// feature.getAttributes().entrySet()) {
-	//// ab = Attribute.newBuilder();
-	//// ab.setId(feature.getAttribute("ID"));
-	//// ab.setTag(entry.getKey());
-	//// ab.setValue(entry.getValue());
-	//// fb.addAttribute(ab.build());
-	//// }
-	//// sb.addFeature(fb.build());
-	//// }
-	//// }
-	////
-	//// gb.addSequence(sb.build());
-	//// }
-	// // Bind all assemblers to the current genome file
-	// Assembler.Builder ab = null;
-	// for (String assembler : assemblers) {
-	// ab = Assembler.newBuilder();
-	// ab.setRefseq(refseq);
-	// String[] data = assembler.split("\\s+");
-	// ab.setName(data[1]);
-	// ab.setDesc(assembler);
-	//
-	// gb.addAssembler(ab.build());
-	//
-	// }
-	//
-	// // Write to the sequence file
-	// try {
-	// // Avoid overflowing the int too early by casting to a long.
-	//// long newSize = Math.min(Integer.MAX_VALUE, (3L *
-	// gb.build().toByteArray().length) / 2L);
-	////
-	//// BytesWritable dataValue = new BytesWritable();
-	//// dataValue.setCapacity((int) newSize);
-	//// dataValue.setSize((int) newSize);
-	//// dataValue.set(new BytesWritable( gb.build().toByteArray()));
-	//
-	// this.seqFileWriter.append(new Text(refseq), new
-	// BytesWritable(gb.build().toByteArray()));
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// }
-	//
-	// }
-	//
-	// this.closeWrite();
-	// }
 
 	private static File[] getGFF(String path) {
 		File dir = new File(path);
@@ -1581,18 +922,12 @@ public void store_RefSeq_Json(String path) {
 
 	private static List<String> get_assemblers(File file) {
 
-		
 		total_length = 0;
 		total_gap_length = 0;
 		contig_N50 = 0;
 		scaffold_N50 = 0;
 		contig_count = 0;
 		scaffold_count = 0;
-		assembly_date =0;
-
-		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar cal = Calendar.getInstance();
-
 
 		List<String> assemblers = new ArrayList<String>();
 		BufferedReader reader = null;
@@ -1608,29 +943,10 @@ public void store_RefSeq_Json(String path) {
 						for (int i = 0; i < data.length; i++) {
 							assemblers.add(data[i]);
 						}
-//						if (reader != null) {
-//							reader.close();
-//						}
-//						return assemblers;
-					}
-					if (line.startsWith("# Date")) {
-						String[] words =line.split(" ");
-						String strDate = words[words.length-1].trim(); 
-						Date dtime = null;
-						try {
-							 dtime = ft.parse(strDate);
-						} catch (ParseException e3) {
-							// TODO Auto-generated catch block
-							e3.printStackTrace();
+						if (reader != null) {
+							reader.close();
 						}
-						
-						cal.setTime(dtime);
-						assembly_date =dtime.getTime();
-
-						//System.out.println("dtime: "+  dtime.toString() + " get Year: " + cal.get(Calendar.YEAR));
-						
-						
-						
+						return assemblers;
 					}
 					if (line.startsWith("all")) {
 						String[] data = line.split("\t");
@@ -1676,8 +992,7 @@ public void store_RefSeq_Json(String path) {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		if (assemblers.isEmpty()) 
-				assemblers.add(" N/A");
+		assemblers.add(" N/A");
 		if (reader != null)
 			try {
 				reader.close();
@@ -1754,26 +1069,6 @@ public void store_RefSeq_Json(String path) {
 		}
 	}
 
-	protected boolean openRefSeqWriter(String seqPath) {
-		FileSystem fileSystem;
-		try {
-			fileSystem = FileSystem.get(conf);
-			this.project_seqFileWriter = SequenceFile.createWriter(fileSystem, conf,
-					new Path(seqPath + DSIProperties.HADOOP_SEQ_FILE_NAME), Text.class, BytesWritable.class);
-
-			this.assembler_seqFileWriter = SequenceFile.createWriter(fileSystem, conf,
-					new Path(seqPath + DSIProperties.HADOOP_Assembler_FILE_NAME), Text.class, BytesWritable.class);
-
-			this.feature_seqFileWriter = SequenceFile.createWriter(fileSystem, conf,
-					new Path(seqPath + DSIProperties.HADOOP_Feature_FILE_NAME), Text.class, BytesWritable.class);
-
-			return true;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-	
 	protected boolean openWriter(String seqPath) {
 		FileSystem fileSystem;
 		try {
@@ -1841,19 +1136,6 @@ public void store_RefSeq_Json(String path) {
 		}
 	}
 
-	protected boolean closeRefSeqWrite() {
-		try {
-			
-			project_seqFileWriter.close();
-			assembler_seqFileWriter.close();
-			feature_seqFileWriter.close();
-
-			return true;
-		} catch (Exception ex) {
-			return false;
-		}
-	}
-	
 	protected boolean closeWrite() {
 		try {
 			// FIXME: temporarily disables because of NR database

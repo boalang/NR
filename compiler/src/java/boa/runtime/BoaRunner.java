@@ -72,8 +72,8 @@ public abstract class BoaRunner extends Configured implements Tool {
 
 		// faster local reads
 		// FIXME: temporarily disabled by Hamid for XSEDE
-		configuration.setBoolean("dfs.client.read.shortcircuit", true);
-		configuration.setBoolean("dfs.client.read.shortcircuit.skip.checksum", true);
+		//configuration.setBoolean("dfs.client.read.shortcircuit", true);
+		//configuration.setBoolean("dfs.client.read.shortcircuit.skip.checksum", true);
 
 		// by default our MapFile's index every key, which takes up
 		// a lot of memory - this lets you skip keys in the index and

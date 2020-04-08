@@ -143,96 +143,59 @@ public class SymbolTable {
 		
 
 /** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
 		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
+
+		globals.put("input", new SequenceProtoTuple());
+		idmap.put("Annotation", new AnnotationProtoTuple());
+		idmap.put("Cluster", new ClusterProtoTuple());
 		/** Automatically generated code ends **/
 
 
 		
 
 /** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
 		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
+
+		globals.put("input", new SequenceProtoTuple());
+		idmap.put("Annotation", new AnnotationProtoTuple());
+		idmap.put("Cluster", new ClusterProtoTuple());
 		/** Automatically generated code ends **/
 
 
 		
 
 /** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
 		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
+
+		globals.put("input", new SequenceProtoTuple());
+		idmap.put("Annotation", new AnnotationProtoTuple());
+		idmap.put("Cluster", new ClusterProtoTuple());
 		/** Automatically generated code ends **/
 
 
 		
 
 /** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
 		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
+
+		globals.put("input", new SequenceProtoTuple());
+		idmap.put("Annotation", new AnnotationProtoTuple());
+		idmap.put("Cluster", new ClusterProtoTuple());
 		/** Automatically generated code ends **/
 
 
 		
 
 /** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
 		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
+
+		globals.put("input", new SequenceProtoTuple());
+		idmap.put("Cluster", new ClusterProtoTuple());
 		/** Automatically generated code ends **/
 
 
 		
 
-/** Automatically generated code start **/
-		idmap.put("Genome", new GenomeProtoTuple());
-
-		globals.put("input", new GenomeProtoTuple());
-		idmap.put("Sequence", new SequenceProtoTuple());
-		idmap.put("AssemblerRoot", new AssemblerRootProtoTuple());
-		idmap.put("Assembler", new AssemblerProtoTuple());
-		idmap.put("FeatureRoot", new FeatureRootProtoTuple());
-		idmap.put("Feature", new FeatureProtoTuple());
-		idmap.put("Attribute", new AttributeProtoTuple());
-		/** Automatically generated code ends **/
-
-
-		
-
-		
 		
 
 
@@ -671,7 +634,7 @@ public class SymbolTable {
 			boa.functions.BoaSpecialIntrinsics.class,
 			boa.functions.BoaStringIntrinsics.class,
 			boa.functions.BoaTimeIntrinsics.class,
-		    boa.functions.BoaGenomeIntrinsics.class,
+			//boa.functions.BoaGenomeIntrinsics.class
 			boa.functions.BoaNrIntrinsics.class
 
 		};

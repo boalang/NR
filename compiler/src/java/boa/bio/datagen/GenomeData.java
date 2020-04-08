@@ -27,12 +27,12 @@ public class GenomeData {
 			gb.setRefseq(key);
 			gb.setTaxid("tid1");
 			Sequence.Builder sb = Sequence.newBuilder();
-			//sb.setRefseq(key); from old schema
+			sb.setRefseq(key);
 			sb.setAccession("aid1");
 			sb.setHeader("h1");
 			gb.addSequence(sb);
 			Sequence.Builder sb1 = Sequence.newBuilder();
-			//sb1.setRefseq(key); old schema
+			sb1.setRefseq(key);
 			sb1.setAccession("aid2");
 			sb1.setHeader("h2");
 			gb.addSequence(sb1);

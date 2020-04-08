@@ -19,6 +19,9 @@ import boa.types.*;
 	static {
 		int counter = 0;
 
+		names.put("id", counter++);
+		members.add(new BoaString());
+
 		names.put("tag", counter++);
 		members.add(new BoaString());
 

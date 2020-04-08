@@ -43,9 +43,6 @@ import boa.types.*;
 		names.put("total_gap_length", counter++);
 		members.add(new BoaInt());
 
-		names.put("assembly_date", counter++);
-		members.add(new BoaInt());
-
 
 		}
 

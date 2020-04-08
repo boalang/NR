@@ -13,7 +13,6 @@ import com.google.protobuf.CodedInputStream;
 
 import boa.dsi.DSIProperties;
 import boa.types.Ast.ASTRoot;
-import boa.types.GFeature.AssemblerRoot;
 import boa.types.GFeature.FeatureRoot;
 
 public class TestSequenceFile {
@@ -31,12 +30,10 @@ public class TestSequenceFile {
 //		}
 //		w.close();
 		
-		String seqFile = args[0];
-		
 		Text key = new Text();
 		BytesWritable val = new BytesWritable();
 		SequenceFile.Reader seqFile_Reader= new SequenceFile.Reader(fileSystem,
-				new Path(seqFile),conf);
+				new Path("/Users/hbagheri/Downloads/nr_database/seq_file/annotations.seq"),conf);
 
 ////		SequenceFile.Reader gene= new SequenceFile.Reader(fileSystem,
 //				new Path("/home/seq_files/annotations.seq/data"), 
@@ -62,28 +59,23 @@ public class TestSequenceFile {
 				byte[] bytes = val.getBytes();
 				
 				//System.out.println(boa.types.Nr.Cluster.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength())));
-				//System.out.println(boa.types.Nr2.Sequence.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength())));
+				System.out.println(boa.types.Nr2.Sequence.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength())));
 
 				
 //			}
 			
 			
-			boa.types.GFeature.Genome genome = boa.types.GFeature.Genome.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength()));
-			System.out.println(genome);
+//			boa.types.GFeature.Genome genome = boa.types.GFeature.Genome.
+//					parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength()));
+//			System.out.println(genome);
 			
 			//Parse assembler data
-			//AssemblerRoot asmr=boa.types.GFeature.AssemblerRoot.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength()));
 			//System.out.println(boa.types.GFeature.AssemblerRoot.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength())));
 
-			//Parse Fastq  dataset
-			//boa.types.SRA.Fastq fastq=boa.types.SRA.Fastq.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength()));
-			//System.out.println(fastq);
-
-				
 			//Parse feature data
 			//FeatureRoot featureData=boa.types.GFeature.FeatureRoot.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength()));
 		    //System.out.println(featureData);
-//			System.out.println(" Length: "+  bytes.length/1000000 + " MB");
+			//System.out.println(" Length: "+  bytes.length/1000000 + " MB");
 
 			
 		}
@@ -92,10 +84,6 @@ public class TestSequenceFile {
 //			System.out.println(ASTRoot.parseFrom(CodedInputStream.newInstance(bytes, 0, val.getLength())));
 //		}
 //		r.close();
-		
-		
-		System.out.println("Parsing done successfully! ");
 	}
 
-	
 }
