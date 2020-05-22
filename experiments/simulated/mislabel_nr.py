@@ -62,7 +62,7 @@ def mislabel(boa_output):
     nr_full_taxa= get_nr_taxlist("/Users/hbagheri/Downloads/mis-ann/seqCount2019V3/nr_taxa_list_from_Boa")
     mislabel_rank = 'phylum'
 
-    with open(boa_output,'r') as f, open(boa_output+"_mislabeled",'w') as mislabeled_file:
+    with open(boa_output,'r') as f, open(boa_output + "_mislabeled", 'w') as mislabeled_file:
         for line in f:
             protein_taxa_set.clear()
             line_tax = line[line.index(":")+1:]
@@ -70,15 +70,15 @@ def mislabel(boa_output):
             for item in tax_array: #10090=3
                 protein_taxa_set.add(item[:item.index("=")])
 
-            # for this protein get the desired rank classification like phylums
+            # for this protein get the desired rank classification like phylum
             set_cls= get_set_classification(protein_taxa_set, mislabel_rank)
 
             # now, take sample and mislabel this protein (append to the line)
-            # take another sample from nr taxa list and check if its phyla is different then misaanotate it
+            # take another sample from nr taxa list and check if its phyla is different, then misaanotate it
             while True:
                 random_tax = random.sample(nr_full_taxa, 1)
                 sample_rank = get_ranks(random_tax[0], mislabel_rank)
-                if  sample_rank not in set_cls and sample_rank != "null":
+                if sample_rank not in set_cls and sample_rank != "null":
                     print("find random misann")
                     print("random rank: ", sample_rank)
                     print(random_tax)
@@ -87,6 +87,7 @@ def mislabel(boa_output):
             # write it in the disk
             # add random_tax=1 to the end
             mislabeled_file.write (line.rstrip() + ";" + random_tax[0] + "=1" + '\n')
+
 
 # the verified sample is here: '/Users/hbagheri/Downloads/mis-ann/simulated/sample_verified'
 mislabel(sys.argv[1])
