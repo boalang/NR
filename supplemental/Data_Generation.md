@@ -1,7 +1,8 @@
 # Dataset generation
 
-## NR database:
-* nr contains non-redundant sequences from GenBank translations (i.e. GenPept) together with sequences from other databanks (Refseq, PDB, SwissProt, PIR and PRF).
+## NR database
+ 
+The NR database contains non-redundant sequences from GenBank translations (i.e. GenPept) together with sequences from other databanks (Refseq, PDB, SwissProt, PIR and PRF).
   - link: http://www.bioinf.org.uk/teaching/gradtrain/blast.html
 
 
@@ -44,8 +45,9 @@
       # left outer join the deflines with the clustering info from CD-HIT output
       join -t " " -a1 nr95_5M_annotations_modified_sorted_cut_append nr95_5M.clstr_converted_modified_sorted_append > joined_data_5M
 
-    ```
+```
 
+### Data generation on a local machine
 * generate NR Annotations database (annotations.seq) on a local machine with core i7 CPU
    * run time:  2 hours
    * size  37 GB
@@ -53,9 +55,12 @@
 
 
 
-## Data generation command on bridges or local machine
+### Data generation command on bridges or local machine
 
 ``` ./datagen.sh /paht/to/the/output/location/  /path/to/the/raw/file/```
+
+
+##### Data format 
 
 * A line of the data in the database appears as follows with special characters ```^A```, ```ð```, and ```ü``` to separate fields.  The sequence ID for the first annotation for each sequence in nr was used as a uniq identifier.
 
@@ -63,7 +68,7 @@
 1A38 ü 9913 Bos taurus ü Chain P, 14-3-3 Protein Zeta Bound To R18 Peptide^A1A38 ü 9913 Bos taurus ü Chain Q, 14-3-3 Protein Zeta Bound To R18 Peptideð 88250449 0  20aa, *ü 72372990 0     20aa, *ü 61742168 0     20aa, *ü 53299262 0     20aa, *ü 46152904 0     20aa, *ü 40009326 0     20aa, *ü 1092587 1      20aa, 5:20:268:281/68.75%
 ```
 
-## data generation on a small subset of data to test for jupyter or command line
+### data generation on a small subset of data to test for jupyter or command line
 
 * select the top 5M lines in the clstr file
   ```
