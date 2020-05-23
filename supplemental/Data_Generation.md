@@ -113,7 +113,7 @@
   * First schema started with Clusters as a first message in protobuf and we had another Hadoop sequence file called ```sequences.seq``` that need access to the disk each time. But current schema has optimized.
 * run time difference:
   * First schema that we had 2 sequnce file needs more I/O and generated NR Annotations database (annotations.seq and sequences.seq) on a local machine with core i7 CPU
-     * run time:  5 days
+     * run time:  5 days but on the XSEDE cluster 2 hours
      * size  28 GB ( raw data is 40 GB just annotations(def line) not protein sequences)
   * Optimized data schema took us only 2 hours! The file size is 37GB
 
