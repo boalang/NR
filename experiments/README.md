@@ -4,7 +4,8 @@
 * [Analysis and documents regarding simulated dataset](simulated)
 
 ## Manual verification of the NR sample 
-* [Manual analysis](Manual/README.md)
+* [Manual analysis of 1000 sample](Manual/README.md)
+
 ## RNA dataset
 #### Following works on detecting and correcting misclassifications in rRNA sequences.
 * https://github.com/amkozlov/mislabels16-data
