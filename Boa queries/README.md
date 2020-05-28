@@ -12,25 +12,8 @@ if (len(s.annotation) > 10){
 }
 ```
 
-### Output
-```
 
-```
-
-* remove the tax assignment
-
-```
-s: Sequence = input;
-protOut : output sum [string] of int;
-
-if (len(s.annotation) > 10){
-  foreach(i:int; def(s.annotation[i]))
-   if (strfind("[",s.annotation[i].defline)> 0)
-    protOut [trim(substring(s.annotation[i].defline, 0, strfind("[",s.annotation[i].defline)))] << 1;
-}
-```
-
-*  Top proteins with remove the tax assignment
+*  Top 1000 proteins 
 
 ```
 s: Sequence = input;
@@ -78,11 +61,7 @@ foreach(j:int; def(s.cluster[j]))
   }
 ```
 
-### Output
-```
-```
-* time:
-* file location:
+
 
 ## Tax Frequencies for each cluster in different similarity level
 ```
@@ -94,11 +73,6 @@ foreach(i:int; def(s.annotation[i]))
    	 clstrOut[s.cluster[j].similarity][s.cluster[j].cid] [s.annotation[i].tax_name]<< 1;
 ```
 
-### Output
-```
-```
-
-* hadoop location
 
 
 ## list of all taxonomies for each cluster with all similarity levels
@@ -127,11 +101,6 @@ foreach(i:int; def(s.cluster[i]))
 ```
 ### NB: match doesn't work on Ubuntu but works fine on Mac
 * current query returns all the tax_names
-*
-
-### sample Output
-```
-```
 
 * location on bridges: ``` /pylon5/mc5fr5p/hbagheri/09_Hadoop/allClstersTaxs/part-r-00000```
 
@@ -172,10 +141,6 @@ foreach(i:int; def(s.cluster[i]))
 
 ```
 
-### Output
-```
-
-```
 
 
 
@@ -284,8 +249,7 @@ foreach(i:int; def(s.cluster[i])){
 ```
 * location on bridges```../09_Hadoop/scn/part-0-00000```
 * #of lines in the output:281220 ```wc -l ```
-* run time:
-*
+
 
 
 
@@ -749,11 +713,6 @@ if (hasFunc(s,`hypothetical protein`)){
 };
 ```
 
-### sample Output
-
-```
-
-```
 
 # what are representative sequences for cluster in a certain similarity level e.g 95%?
 ```
