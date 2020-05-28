@@ -21,6 +21,8 @@
 Boa<sub>g</sub> is a domain-specific language and infrastructure on top of Hadoop for genomics data.
 Website: https://boalang.github.io/bio/
 
+Boa<sub>g</sub> example on the infrastructure: 
+http://boa.cs.iastate.edu/examples/boag/index.php
 
 ### Prerequisites
 
