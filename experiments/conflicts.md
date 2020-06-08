@@ -65,9 +65,9 @@ output:
 ### Details of conflicts in sequence and cluster annotations
 ##### Sequence   `1FE1` that belongs to a cluster ID  `82`
 * Top three taxonomic assignment within a cluster and their frequencies: 
- [(9606)[https://www.ncbi.nlm.nih.gov/taxonomy/?term=9606], 86),
-  (9913)[https://www.ncbi.nlm.nih.gov/taxonomy/?term=9913], 65),
-  (9823)[https://www.ncbi.nlm.nih.gov/taxonomy/?term=9823], 56)]
+ [ [9606](https://www.ncbi.nlm.nih.gov/taxonomy/?term=9606), 86),
+  [9913](https://www.ncbi.nlm.nih.gov/taxonomy/?term=9913), 65),
+  [9823](https://www.ncbi.nlm.nih.gov/taxonomy/?term=9823), 56)]
 * confidence score: `86/(86+65+56) = 0.41`
 
 ##### Sequence `AAB18559` belongs to the cluster ID `18982245`
