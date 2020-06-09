@@ -9,7 +9,7 @@ Samples protein sequences and their associated trees can be found here:
 Following example shows a potentially misclassified sequence with protein ID `CDA34809`.
 Based on the tree we can only see that there is a super-kingdom violation.
 Based on the tree, we can not propose which of the two assignment might be the correct one.
-For all these examples we may find a most probable taxonomic assignment by looking at the 
+For all these examples we find the most probable taxonomic assignment by looking at the 
 clusters at 95% sequence similarity.
 
 ```text

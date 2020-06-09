@@ -1,5 +1,34 @@
 # Top Protein functions
 
+This is the BoaG query:
+
+```text
+[hbagheri@login005 protFuncClstrSep2019OUTPUT]$ cat ../protFuncFreqAug2019V2.boa
+s: Sequence = input;
+protOut : output sum [string][string] of int;
+ 
+distinctTax := function (seq: Sequence): int{
+  taxSet : set of string;
+  foreach(i:int; def(seq.annotation[i]))
+   add(taxSet,seq.annotation[i].tax_id);
+   
+  return(len(taxSet));
+  
+};
+
+
+if (distinctTax(s) > 10){
+ foreach(i:int; def(s.annotation[i])){
+   if (strfind("[",s.annotation[i].defline)> 0)
+    protOut [trim(substring(s.annotation[i].defline, 0, strfind("[",s.annotation[i].defline)))][s.seqid] << 1;
+   else
+    protOut [s.annotation[i].defline][s.seqid]<<1;
+  }
+}
+```
+The output on the cluster: `/pylon5/mc5fr5p/hbagheri/09_Hadoop/protFuncFreqAug2019V2OUTPUT/part-r-00000`
+
+
 * List of top protein functions
 
 ```
