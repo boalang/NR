@@ -114,14 +114,14 @@
            [[1747](https://www.ncbi.nlm.nih.gov/taxonomy/?term=1747) = 95,
            [1905725](https://www.ncbi.nlm.nih.gov/taxonomy/?term=1905725) = 7,
             [31957](https://www.ncbi.nlm.nih.gov/taxonomy/?term=31957) = 6]
-* Confidence score = `95/(95+7+6) = 0.78`
+* Confidence score: `95/(95+7+6) = 0.78`
 
 
 
 
-## More Details on Conflicts analysis BoaG query
+### More Details on Conflicts analysis BoaG query
 
-### Examples
+#### Examples
 
 * convert Boa output to one line for each sequence
 
@@ -161,7 +161,7 @@ output:
 ```
 
 
-## Analysis
+#### Analysis files and parameters
 
 * location: ```/pylon5/mc5fr5p/hbagheri/00_rawData/verification_NR```
 * files that contain sequences; clusters, and the dictionary of seq:cluster

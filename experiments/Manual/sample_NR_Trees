@@ -1,6 +1,10 @@
+Following protein sequences were examined manually to check if there is a violation, i.e. root, super-kingodm violation, etc.
+These trees were generated from the list of taxonomic assingments for each protein sequences.
+The leaves also contain the rank and the frequencies that each leaf appeared for that particular protein.
+For example, for the protein sequence ID KRP32005, we have two taxonomic assignments that each appeared once.
 
 
-**   ———————————————KRP32005----------------------------------------------
+---------------------------------KRP32005----------------------------------------------
 
                                      /-Verrucomicrobia subdivision 6 bacterium BACL9 MAG-120820-bin42, species, 1
 -Verrucomicrobia subdivision 6, family
@@ -48,7 +52,7 @@
 
 
 
-Mislabel ———————————————CDA34809----------------------------------------------
+———————————————CDA34809----------------------------------------------
 
                       /-Firmicutes bacterium CAG:536, species, 1
 -Bacteria, superkingdom
@@ -57,7 +61,7 @@ Mislabel ———————————————CDA34809------------------
 
 
 
-**.  ———————————————WP_008796925----------------------------------------------
+———————————————WP_008796925----------------------------------------------
 
                                                                                                         /-Fusobacterium nucleatum subsp. vincentii 3_1_27, no rank, 1
                                                     /Fusobacterium nucleatum subsp. vincentii, subspecies

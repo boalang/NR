@@ -20,7 +20,7 @@
 
 ## Sensitivity analysis
 
-* [Correcting misclassified sequences](sensetivity.md)
+* [Correcting misclassified sequences](sensitivity.md)
 
 ## Compare with literature
 * [Related works on finding misclassified taxa](compare.md)
