@@ -132,21 +132,9 @@ output:
   ('1197953', 2)]
 * confidence score: ```15/(15+2+2) = 0.78```
 
-##### Sequence ID
-AAR05988 809393
-[('1350550', 2), ('1351434', 2), ('438385', 2)] [('45133', 216), ('55169', 205), ('310453', 203)]
 
-
-AAS44518 19375029
-[('1313', 2), ('222523', 1)] [('1396', 758), ('1428', 318), ('155322', 208)]
-
-
-AAS68028 62389810
-[('31604', 1), ('32630', 1)] [('31604', 7), ('32630', 1)]
-
-
-##### sequene ID AAT83007 belongs to the cluster ID 21005513
-* tree
+##### sequence ID `AAT83007` belongs to the cluster ID `21005513`
+* tree for protein `AAT83007`
 
   ```
                                                                              /-Propionibacterium sp. CC003-HC2, species
@@ -173,6 +161,9 @@ AAS68028 62389810
 
   ```
 
-* sequence: [('1005703', 1), ('1031709', 1), ('1185650', 1)]
 
-* cluster: [('1747', 95), ('1905725', 7), ('31957', 6)]
+* Top taxa and their frequencies for the cluster `21005513`: 
+           [1747](https://www.ncbi.nlm.nih.gov/taxonomy/?term=1747) = 95,
+           [1905725](https://www.ncbi.nlm.nih.gov/taxonomy/?term=1905725) = 7,
+            [31957](https://www.ncbi.nlm.nih.gov/taxonomy/?term=31957) = 6]
+* Confidence score = `95/(95+7+6) = 0.78`
